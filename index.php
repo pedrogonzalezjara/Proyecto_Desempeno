@@ -129,7 +129,7 @@ if (ALLOW_ANY_ADD == 'yes') {
   </div>
 </form>
 
-<p><?php if (ALLOW_REGISTER == "yes"){?>
+<p><?php if (ALLOW_REGISTER == "no"){?>
 <a href="fhd_register.php" class="btn btn-default">register</a>  
 <?php } ?> <a href="fhd_forgotpassword.php" class="btn btn-default">forgot password</a></p>
 <?php }?>
