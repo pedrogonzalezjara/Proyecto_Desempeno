@@ -13,13 +13,13 @@ include("includes/functions.php");
 //initilize db
 $db = new ezSQL_mysqli(db_user,db_password,db_name,db_host);
 
-<<<<<<< HEAD
+
 if (ALLOW_REGISTER <> "yes"){
 	echo "<p>El registro esta cerrado</p>";
-=======
+
 if (ALLOW_REGISTER <> "no"){
 	echo "<p>Registration is Closed</p>";
->>>>>>> origin/master
+
 	include("includes/footer.php");
 	exit;
 	}
