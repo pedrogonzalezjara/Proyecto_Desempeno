@@ -69,19 +69,19 @@ if (CAPTCHA_REGISTER == "yes"){
 </style>
 <!-- validation -->
 <script type="text/javascript">
-var name = new LiveValidation( 'name', {wait: 500, validMessage: "Thank you" } );
+var name = new LiveValidation( 'name', {wait: 500, validMessage: "Valido" } );
 name.add( Validate.Presence, { failureMessage: " este dato es requerido" } );
 name.add( Validate.Length, { minimum: 2 } );
 
-var email = new LiveValidation( 'email', {wait: 500, validMessage: "Thank you" } );
+var email = new LiveValidation( 'email', {wait: 500, validMessage: "Valido" } );
 email.add( Validate.Presence, { failureMessage: " este dato es requerido" } );
 email.add( Validate.Email );
 
-var password = new LiveValidation( 'password', {wait: 500, validMessage: "Thank you" } );
+var password = new LiveValidation( 'password', {wait: 500, validMessage: "Valido" } );
 password.add( Validate.Presence, { failureMessage: " este dato es requerido" } );
 password.add( Validate.Length, { minimum: 5 } );
 
-var captcha = new LiveValidation( 'captcha', {wait: 2000, validMessage: "Thank you" } );
+var captcha = new LiveValidation( 'captcha', {wait: 2000, validMessage: "Valido" } );
 captcha.add( Validate.Presence, { failureMessage: " este dato es requerido" } );
 captcha.add( Validate.Length, { minimum: 5 } );
 </script>
