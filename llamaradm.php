@@ -28,7 +28,7 @@ include("includes/ez_sql_mysqli.php");?>
 <form id="form1" name="form1" method="post" action="originar.php" action="fhd_search.php" class="form-horizontal">
 <table class="<?php echo $table_style_3;?>" style='width: auto;'>
 
-	<td>Responder LLamadas Pendientes</td>
+	<td>Responder Llamadas Pendientes</td>
 	</tr>		
 			
 	
