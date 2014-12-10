@@ -44,7 +44,7 @@ if ($num > 0){
 	<th>Nivel</th>
 	<th>Email de Actualización de consulta</th>
 	<th>Pendiente</th>
-	<th>Edicion bloqueada</th>
+	<th>Edición bloqueada</th>
 </tr>
 <?php
 foreach ( $site_calls as $call )
