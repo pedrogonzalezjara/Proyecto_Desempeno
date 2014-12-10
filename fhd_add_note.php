@@ -107,7 +107,7 @@ $note_body = $db->get_var("select note_body from site_notes where note_id = $not
 <input type='hidden' name='nacl' value='<?php echo $nacl;?>'>
 <input type='hidden' name='note_id' value='<?php echo checkid($_GET['note_id']);?>'>
 </form>
-<h5><i class="fa fa-arrow-left"></i> <a href="fhd_call_edit.php?call_id=<?php echo $call_id;?>">back to ticket details</a></h5>
+<h5><i class="fa fa-arrow-left"></i> <a href="fhd_call_edit.php?call_id=<?php echo $call_id;?>">Volver a detalles de consulta</a></h5>
 <?php } 
 
 //ADD note

@@ -253,15 +253,15 @@ if ( $filecount > 0 ) {
 </table>
 <input type='hidden' name='nacl' value='<?php echo $nacl;?>'>
 <input type='hidden' name='call_id' value='<?php echo $call_id;?>'>
-<input type="submit" value="update" class="btn btn-primary">
+<input type="submit" value="Actualizar" class="btn btn-primary">
 </form>
-<h4><i class="fa fa-plus"></i> <a href="fhd_add_note.php?call_id=<?php echo $call_id;?>&action=add&nacl=<?php echo $nacl;?>">Add Note</a></h4>
+<h4><i class="fa fa-plus"></i> <a href="fhd_add_note.php?call_id=<?php echo $call_id;?>&action=add&nacl=<?php echo $nacl;?>">añadir notas</a></h4>
 <?php
 //CALL NOTES=======================================================
 //i notes is set at the top of this file.
 if ($isnotes > 0){
-	echo "<a name='notes'></a>\n";
-	echo "<table class='$table_style_3' style='width: 75%'><tr>\n<th>Usarios</th>\n<th>fecha</th>\n<th>Contenidos</th>\n<th colspan='2'>Acciones</th>\n</tr>\n";
+	echo "<a name='notas'></a>\n";
+	echo "<table class='$table_style_3' style='width: 75%'><tr>\n<th>Usurios</th>\n<th>fecha</th>\n<th>Contenidos</th>\n<th colspan='2'>Acciones</th>\n</tr>\n";
 	$site_notes = $db->get_results("SELECT note_id,note_title,note_body,note_type,note_post_date,note_post_user from site_notes WHERE (note_relation = $call_id) AND note_type = 1 order by note_id desc;");
 	foreach ( $site_notes as $note )
 	{
@@ -279,7 +279,7 @@ if ($isnotes > 0){
 		echo "<td valign='top'>$note_post_date</td>\n";
 		echo "<td valign='top' style='width: 400px;'>$note_body</td>\n";
 		echo "<td align='center'><a href='fhd_add_note.php?note_id=$note_id&action=edit&call_id=$call_id&nacl=$nacl'><i class='glyphicon glyphicon-edit'></i></a></td>\n";
-		echo "<td align='center'><a href='fhd_note_actions.php?note_id=$note_id&call_id=$call_id&action=delete&nacl=$nacl' $confirm><i class='glyphicon glyphicon-ban-circle' title='delete'></i></a></td>\n";
+		echo "<td align='center'><a href='fhd_note_actions.php?note_id=$note_id&call_id=$call_id&action=delete&nacl=$nacl' $confirm><i class='glyphicon glyphicon-ban-circle' title='eliminar'></i></a></td>\n";
 		echo "</tr>\n";
 		}
 	echo "</table>";
