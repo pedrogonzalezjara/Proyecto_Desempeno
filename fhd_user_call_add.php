@@ -95,7 +95,7 @@ $user_info = $db->get_row($myquery);
 
 <form action="fhd_user_call_add.php" method="post" enctype="multipart/form-data" class="form-horizontal">
 <table class="<?php echo $table_style_2;?>" style='width:75%;'>
-	<tr><td style="width: 150px;">fecha y hora</td>
+	<tr><td style="width: 150px;">fecha y hora </td>
 	<td><?php echo date('n/j/y g:i a');?></td></tr>		
 	
 	<tr><td>Nombre</td>
@@ -142,7 +142,7 @@ foreach ($device_name as $device )
 <?php } ?>
 
 <input type='hidden' name='nacl' value='<?php echo $nacl;?>'>
-<input type="submit" value="Solicitud" class="btn btn-primary btn-large btn-success">
+<input type="submit" value="Solicitar" class="btn btn-primary btn-large btn-success">
 </form>
 <!-- validation -->
 <script type="text/javascript" src="js/livevalidation_standalone.compressed.js"></script>
