@@ -6,7 +6,7 @@
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/navbar.css" rel="stylesheet">
 <?php
-$confirm = " onclick=\"return confirm('Are you sure you want to delete?')\"";
+$confirm = " onclick=\"Confirmar, esta seguro que desea eliminar?\"";
 $table_style_1 = "table table-striped table-bordered";
 $table_style_2 = "table table-striped table-bordered table-nonfluid";
 $table_style_3 = "table table-striped table-bordered table-nonfluid table-condensed";

@@ -171,7 +171,7 @@ $site_calls = $db->get_row("SELECT call_id,call_first_name,call_last_name,call_p
 	<option value='0'<?php if($site_calls->call_status == 0){echo ' selected';}?>>activo</option>
 	<option value='1'<?php if($site_calls->call_status == 1){echo ' selected';}?>>cerrado</option>
 	<option value='3'<?php if($site_calls->call_status == 3){echo ' selected';}?>>eliminado</option>
-	</select> &nbsp; <a href="fhd_call_edit.php?call_id=<?php echo $call_id;?>&action=delete&nacl=<?php echo $nacl;?>" onclick="return confirm('Are you sure you want to delete?')"><i class="fa fa-times" title="DELETE"></i></a>
+	</select> &nbsp; <a href="fhd_call_edit.php?call_id=<?php echo $call_id;?>&action=delete&nacl=<?php echo $nacl;?>" onclick="return confirm('Esta seguro que lo desea eliminar?')"><i class="fa fa-times" title="DELETE"></i></a>
 	</td></tr>
 	
 	<tr><td>Fecha</td></td>
@@ -243,7 +243,7 @@ if ( $filecount > 0 ) {
 			$file_ext = $fn->file_ext;
 			$timestamp = $fn->timestamp;
 			$realpath = md5(UPLOAD_KEY.$file_id).".".$file_ext;
-			echo "<tr><td colspan='2'><a href='upload/".$realpath."' target='_blank'>$file_name</a> &bull; $timestamp <a href='fhd_file_delete.php?delete=1&file_id=$file_id&call_id=$call_id&nacl=$nacl'  onclick=\"return confirm('Delete File?')\"><i class='fa fa-times' title='delete'></i></a></td></tr>\n";
+			echo "<tr><td colspan='2'><a href='upload/".$realpath."' target='_blank'>$file_name</a> &bull; $timestamp <a href='fhd_file_delete.php?delete=1&file_id=$file_id&call_id=$call_id&nacl=$nacl'  onclick=\"return confirm('Eliminar?')\"><i class='fa fa-times' title='delete'></i></a></td></tr>\n";
 		} 
 	}
 }
