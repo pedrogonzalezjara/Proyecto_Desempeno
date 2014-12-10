@@ -33,10 +33,13 @@ if (isset($_GET["recent"])) {
 		    case 2:
 		        $addpage = "fhd_call_add.php";
 				break;
-		}
-		$addpage = ($_SESSION['user_level'] == 1) ? "fhd_user_call_add.php" : "fhd_call_add.php"; ?>
-		<li<?php if($page == $addpage){echo ' class="active"';};?>><a href="<?php echo $addpage;?>">añadir Consulta</a></li>
-                <li><a href="llamar.php">Llamar</a></li>
+		}?>
+		
+                <?php $addpage = ($_SESSION['user_level'] == 1) ? "llamar.php" : "llamaradm.php"; ?>
+		<li<?php if($page == $addpage){echo ' class="active"';};?>><a href="<?php echo $addpage;?>">Llamar</a></li>
+                <?php $addpage = ($_SESSION['user_level'] == 1) ? "fhd_user_call_add.php" :  "index.php"; ?>
+		<li<?php if($page == $addpage){echo ' class="active"';};?>><a href="<?php echo $addpage;?>">Añadir Consulta</a></li>
+                
 		<li<?php if($page == 'fhd_search.php'){echo ' class="active"';};?>><a href="fhd_search.php" title="Ticket Search">Busqueda</a></li>
 		<li<?php if($page == 'fhd_myaccount.php'){echo ' class="active"';};?>><a href="fhd_myaccount.php">Mi cuenta</a></li>
 		<li><a href="includes/session.php?logout=y" title="Logout"><i class="fa fa-sign-out fa-lg"></i></a></li>
