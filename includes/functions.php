@@ -131,7 +131,7 @@ function check_email_address($email) {
 
 function yesno($value) {
 	if ($value == "yes") {
-		$value = "<span class='label label-success'>Yes</span>";
+		$value = "<span class='label label-success'>Si</span>";
 	}else{
 		$value = "<span class='label label-default'>No</span>";
 	}
@@ -140,7 +140,7 @@ function yesno($value) {
 
 function onoff($value) {
 	if ($value == "1") {
-		$value = "<span class='label label-success'>Yes</span>";
+		$value = "<span class='label label-success'>Si</span>";
 	}
 	if ($value == "0") {
 		$value = "<span class='label label-default'>No</span>";

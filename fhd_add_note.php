@@ -117,7 +117,7 @@ if ($action=="add") {
 $call_id = checkid($_GET['call_id']);
 $nacl = md5(AUTH_KEY.$db->get_var("select user_password from site_users where user_id = $user_id;"));
 ?>
-<h4>Add Note</h4>
+<h4>Añadir nota</h4>
 <table class="<?php echo $table_style_2;?>" style='width: 75%;'>
 <form action="fhd_add_note.php" method="post" class="form-horizontal">
 <input type='hidden' name='nacl' value='<?php echo $nacl;?>'>
@@ -128,9 +128,9 @@ $nacl = md5(AUTH_KEY.$db->get_var("select user_password from site_users where us
 </form>
 </table>
 	<?php if(isset($_SESSION['admin'])){ ?>
-		<h5><i class="fa fa-arrow-left"></i> <a href="fhd_call_edit.php?call_id=<?php echo $call_id;?>">back to ticket details</a></h5>
+		<h5><i class="fa fa-arrow-left"></i> <a href="fhd_call_edit.php?call_id=<?php echo $call_id;?>">Volver a detalles de consulta</a></h5>
 		<?php }else{ ?>
-		<h5><i class="fa fa-arrow-left"></i> <a href="fhd_call_details.php?call_id=<?php echo $call_id;?>">back to ticket details</a></h5>
+		<h5><i class="fa fa-arrow-left"></i> <a href="fhd_call_details.php?call_id=<?php echo $call_id;?>">Volver a detalles de consulta</a></h5>
 	<?php } ?>
 
 <?php } ?>
