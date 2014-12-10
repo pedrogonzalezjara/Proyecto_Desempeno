@@ -35,9 +35,9 @@ if ($num > 0){
 ?>
 <table class="<?php echo $table_style_1;?>" style='width: auto;'>
 <tr>
-	<th colspan="<?php echo $colspan;?>" style='text-align: center;'>Action</th>
+	<th colspan="<?php echo $colspan;?>" style='text-align: center;'>Accion</th>
 	<?php if($user_level <> 1){?>
-	<th>Nombrfe</th>
+	<th>Nombre</th>
 	<?php } ?>
 	<th>Notas</th>
 	<th>fechas</th>

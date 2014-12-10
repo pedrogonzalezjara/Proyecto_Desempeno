@@ -159,16 +159,16 @@ foreach ($device_name as $device )
 </style>
 <!-- validation -->
 <script type="text/javascript">
-var call_first_name = new LiveValidation( 'call_first_name', {wait: 500, validMessage: "Thank you" } );
-call_first_name.add( Validate.Presence, { failureMessage: " Required" } );
+var call_first_name = new LiveValidation( 'call_first_name', {wait: 500, validMessage: "" } );
+call_first_name.add( Validate.Presence, { failureMessage: " " } );
 call_first_name.add( Validate.Length, { minimum: 2 } );
 
-var call_email = new LiveValidation( 'call_email', {wait: 500, validMessage: "Thank you" } );
-call_email.add( Validate.Presence, { failureMessage: " Required" } );
+var call_email = new LiveValidation( 'call_email', {wait: 500, validMessage: "" } );
+call_email.add( Validate.Presence, { failureMessage: " " } );
 call_email.add( Validate.Email );
 
-var call_details = new LiveValidation( 'call_details', {wait: 500, validMessage: "Thank you" } );
-call_details.add( Validate.Presence, { failureMessage: " Required" } );
+var call_details = new LiveValidation( 'call_details', {wait: 500, validMessage: "" } );
+call_details.add( Validate.Presence, { failureMessage: " " } );
 call_details.add( Validate.Length, { minimum: 5 } );
 </script>
 <br>
