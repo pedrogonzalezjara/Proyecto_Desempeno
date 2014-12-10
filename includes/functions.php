@@ -1,7 +1,7 @@
 <?php
 function checkid($id) {
 	if(!is_numeric($id)){
-		echo "<p>Invalid ID</p>";
+		echo "<p>Id invalida</p>";
 		exit;
 		}else{
 	return $id;
@@ -10,7 +10,7 @@ function checkid($id) {
 
 function valid_user($id) {
 if(!is_numeric($id)){
-	echo "<p>Invalid ID (1)</p>";
+	echo "<p>Id invalida (1)</p>";
 	exit;
 }else{
 	$db = new ezSQL_mysqli(db_user,db_password,db_name,db_host);
@@ -19,7 +19,7 @@ if(!is_numeric($id)){
 		if ($v == 1) {
 			return $id;
 		}else{
-			echo "<p>Invalid ID (2)</p>";
+			echo "<p>Id invalida (2)</p>";
 			exit;
 		}
 	}
@@ -27,7 +27,7 @@ if(!is_numeric($id)){
 
 function valid_id($id) {
 if(!is_numeric($id)){
-	echo "<p>Invalid ID (1)</p>";
+	echo "<p>Id invalida (1)</p>";
 	exit;
 }else{
 	$db = new ezSQL_mysqli(db_user,db_password,db_name,db_host);
@@ -36,7 +36,7 @@ if(!is_numeric($id)){
 		if ($v == 1) {
 			return $id;
 		}else{
-			echo "<p>Invalid Call ID</p>";
+			echo "<p>llamada Id invalida</p>";
 			exit;
 		}
 	}
@@ -100,7 +100,7 @@ $db = new ezSQL_mysqli(db_user,db_password,db_name,db_host);
 	$mail->Subject = 'Ticket '.FHD_TITLE. ' [# '.$call_id.'] Closed.';
 	//Read an HTML message body from an external file, convert referenced images to embedded, convert HTML into a basic plain-text alternative body
 	$call_solution = $db->get_var("SELECT call_solution FROM site_calls WHERE call_id = $call_id;");
-	$econtent = "Ticket Closed.<br><hr>".$call_solution;
+	$econtent = "consulta cerrada.<br><hr>".$call_solution;
 	$mail->MsgHTML($econtent."<br>");
 	//Send the message
 	$mail->Send();
@@ -151,13 +151,13 @@ function onoff($value) {
 function show_user_level($type) {
 switch ($type) {
     case 0:
-        $show_user_level = "Administrator";
+        $show_user_level = "Administrador";
         break;
     case 1:
-        $show_user_level = "User";
+        $show_user_level = "Usuario";
 		break;
     case 2:
-        $show_user_level = "Support Staff";
+        $show_user_level = "Staff de soporte";
 		break;
     case 3:
         $show_user_level = "";
@@ -169,16 +169,16 @@ return $show_user_level;
 function show_type_name($type) {
 switch ($type) {
     case 0:
-        echo "Support Staff";
+        echo "Staff de soporte";
         break;
     case 1:
-        echo "Departments";
+        echo "Departamentos";
 		break;
     case 2:
-        echo "Request Type";
+        echo "Tipo de solicitud";
 		break;
     case 3:
-        echo "Device Type";
+        echo "Tipo de dispositivo";
 		break;
 }
 }
@@ -205,13 +205,13 @@ return $show_type_col;
 function call_status($value) {
 switch ($value) {
     case '0':
-        $value = "Active";
+        $value = "Activo";
         break;
     case '1':
-        $value = "Closed";
+        $value = "Cerrado";
 		break;
     case '3':
-        $value = "Deleted";
+        $value = "Eliminar";
 		break;
 }
 	return $value;

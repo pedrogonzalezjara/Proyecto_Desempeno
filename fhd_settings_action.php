@@ -38,7 +38,7 @@ $type = checkid( $_GET['type'] );
 <p><a href="fhd_settings.php">configuracion</a></p>
 
 <h4><?php show_type_name($type);?></h4>
-<h5><i class="fa fa-plus"></i> <a href="fhd_add_type.php?type=<?php echo $type;?>">Add New</a></h5>
+<h5><i class="fa fa-plus"></i> <a href="fhd_add_type.php?type=<?php echo $type;?>">añadir nuevo</a></h5>
 <?php
 $num = $db->get_var("select count(type_name) from site_types where type = $type;");
 
