@@ -107,7 +107,7 @@ $user_info = $db->get_row($myquery);
 	<tr><td>Telefono</td>
 	<td><input type="text" name="call_phone" class="input-medium" value="<?php echo $user_info->user_phone;?>"></td></tr>
 
-	<tr><td>Departmento</td><td><select name='call_department'>
+	<tr><td>Departamento</td><td><select name='call_department'>
 	<option></option>
 	<?php $call_dept = $db->get_results("select type_id,type_name from site_types where type=1 order by type_name;");
 foreach ($call_dept as $dept )
