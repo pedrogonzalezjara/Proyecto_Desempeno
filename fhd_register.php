@@ -51,7 +51,7 @@ if (CAPTCHA_REGISTER == "yes"){
 <?php } ?>
 </table>
 <br>
-<p><input type="submit" value="Submit" class="btn btn-primary btn-large"></p>
+<p><input type="submit" value="Registrarse" class="btn btn-primary btn-large"></p>
 <input type="hidden" name="try" value="true">
 </form>
 <!-- validation -->
