@@ -77,7 +77,7 @@ $finish = 1;
 if (isset($_POST['try'])) {
 
 	//check the CAPTCHA if enabled.
-	if (CAPTCHA_RESET_PASSWORD == "yes"){
+	if (CAPTCHA_RESET_PASSWORD == "no"){
 		$captchasession = $_SESSION['captcha']['code'];
 		$captcha = $db->escape(trim($_POST['captcha']));
 		if($captchasession <> $captcha) {
