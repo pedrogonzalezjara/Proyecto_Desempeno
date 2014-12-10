@@ -41,7 +41,7 @@ if (ALLOW_REGISTER <> "no"){
 	<td><input type="password" id="password" name="password" placeholder="minimo 5 caracteres"></td>
 </tr>
 <?php
-if (CAPTCHA_REGISTER == "yes"){
+if (CAPTCHA_REGISTER == "no"){
     $captchaimg = '<img src="' . $_SESSION['captcha']['image_src'] . '" alt="CAPTCHA" />';
 ?>
 <tr>

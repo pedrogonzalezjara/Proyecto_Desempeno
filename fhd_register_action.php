@@ -17,7 +17,7 @@ if (ALLOW_REGISTER <> "no"){
 	echo "<p>El registro esta cerrado</p>";
 }
 
-if (CAPTCHA_REGISTER == "yes"){
+if (CAPTCHA_REGISTER == "no"){
 $captchasession = $_SESSION['captcha']['code'];
 $captcha = $db->escape(trim($_POST['captcha']));
 	if($captchasession <> $captcha) {
