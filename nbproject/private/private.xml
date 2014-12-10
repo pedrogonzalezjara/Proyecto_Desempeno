@@ -3,34 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/originar.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/status.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/ami/llamar.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/ami/usuarios.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/index.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/includes/header.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/fhd_call_add.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/fhd_login.php</file>
             <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/includes/session.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/includes/test.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/includes/all-nav.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/includes/footer.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/includes/functions.php</file>
             <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/fhd_add_note.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/llamar.php</file>
             <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/fhd_search.php</file>
             <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/funciones.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/includes/functions.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/ami/loginami.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/includes/header.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/ami/originar.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/llamar.php</file>
             <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/loginami.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/fhd_login.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/includes/all-nav.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/conexion.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/ami/conexionami.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/index.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/usuarios.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/fhd_call_add.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/conexionami.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/originar.php</file>
             <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/originar_usuarios.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/ami/conexion.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/ami/status.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/includes/footer.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/ami/funciones.php</file>
-            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/includes/test.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/status.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/usuarios.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/conexion.php</file>
+            <file>file:/C:/xampp/htdocs/laravel/freehelpdesk-2.4.2c/Proyecto_Desempeno/conexionami.php</file>
         </group>
     </open-files>
 </project-private>
