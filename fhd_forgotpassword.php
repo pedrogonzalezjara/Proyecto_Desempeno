@@ -159,7 +159,7 @@ if (isset($_POST['try'])) {
 </div>
 
 <?php
-if (CAPTCHA_RESET_PASSWORD == "yes"){
+if (CAPTCHA_RESET_PASSWORD == "no"){
 	$_SESSION['captcha'] = simple_php_captcha();
 	$captchaimg = '<img src="' . $_SESSION['captcha']['image_src'] . '" alt="CAPTCHA code">';
 ?>  

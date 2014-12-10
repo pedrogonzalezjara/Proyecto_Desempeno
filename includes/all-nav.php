@@ -35,7 +35,7 @@ if (isset($_GET["recent"])) {
 				break;
 		}?>
 		
-                <?php $addpage = ($_SESSION['user_level'] == 1) ? "llamar.php" : "llamaradm.php"; ?>
+                <?php $addpage = ($_SESSION['user_level'] == 1) ?  "llamaradm.php":"llamar.php"; ?>
 		<li<?php if($page == $addpage){echo ' class="active"';};?>><a href="<?php echo $addpage;?>">Llamar</a></li>
                 <?php $addpage = ($_SESSION['user_level'] == 1) ? "fhd_user_call_add.php" :  "index.php"; ?>
 		<li<?php if($page == $addpage){echo ' class="active"';};?>><a href="<?php echo $addpage;?>">Añadir Consulta</a></li>
