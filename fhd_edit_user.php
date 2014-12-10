@@ -64,7 +64,7 @@ if (isset($_POST['update'])){
 	$db->query("UPDATE site_users SET $user_password_set user_email='$user_email',user_name='$user_name',user_phone='$user_phone',user_address='$user_address',user_city='$user_city',user_state='$user_state',user_zip='$user_zip',user_country='$user_country',user_level=$user_level,user_msg_send=$user_msg_send,user_protect_edit=$user_protect_edit,user_pending=$user_pending where user_id = $url_user_id;");
     $actionstatus = "<div class=\"alert alert-success\" style=\"max-width: 250px;\">
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-    User Update Successful.
+    Usuario actualizado correctamente.
     </div>";
 	//$db->debug();
  }
