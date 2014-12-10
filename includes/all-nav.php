@@ -36,7 +36,7 @@ if (isset($_GET["recent"])) {
 		}
 		$addpage = ($_SESSION['user_level'] == 1) ? "fhd_user_call_add.php" : "fhd_call_add.php"; ?>
 		<li<?php if($page == $addpage){echo ' class="active"';};?>><a href="<?php echo $addpage;?>">añadir Consulta</a></li>
-                <li><a href="llamar.php">Llamada a Ejecutivo</a></li>
+                <li><a href="llamar.php">Llamar a Ejecutivo</a></li>
 		<li<?php if($page == 'fhd_search.php'){echo ' class="active"';};?>><a href="fhd_search.php" title="Ticket Search">Busqueda</a></li>
 		<li<?php if($page == 'fhd_myaccount.php'){echo ' class="active"';};?>><a href="fhd_myaccount.php">Mi cuenta</a></li>
 		<li><a href="includes/session.php?logout=y" title="Logout"><i class="fa fa-sign-out fa-lg"></i></a></li>
