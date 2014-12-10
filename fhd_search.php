@@ -127,7 +127,7 @@ if($user_level <> 1){
 	</tr>		
 	
 	<tr>
-	<td>fecha final</td>
+	<td>Fecha final</td>
 	<td><input type="text" name="call_date2" id="datepicker2" class="input-small"></td></tr>		
 	
 	<tr><td>Nombre</td>
@@ -149,7 +149,7 @@ foreach ($call_dept as $dept )
 	</select></td></tr>
 
 	<tr><td>Tipo de solicitud</td><td><select name='call_request'>
-	<option value="">Choose</option>
+	<option value="">elegir</option>
 	<?php $request_name = $db->get_results("select type_id,type_name from site_types where type=2 order by type_name;");
 foreach ($request_name as $request )
 {?>
@@ -158,7 +158,7 @@ foreach ($request_name as $request )
 	</select></td></tr>
 
 	<tr><td>Dispositivo</td><td><select name='call_device'>
-	<option value="">Choose</option>	
+	<option value="">elegir</option>	
 	<?php $device_name = $db->get_results("select type_id,type_name from site_types where type=3 order by type_name;");
 foreach ($device_name as $device )
 {?>
