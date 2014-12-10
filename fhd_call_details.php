@@ -39,8 +39,8 @@ $site_calls = $db->get_row("SELECT call_id,call_first_name,call_last_name,call_p
 	$call_staff = $site_calls->call_staff;
 	$staff_name = $db->get_var("SELECT user_name from site_users WHERE (user_id = $call_staff);");
 	$call_date = date("Y-m-d",($site_calls->call_date + (FHD_TIMEADJUST * 3600)));
-	echo "<tr><td>Status</td><td>" . call_status($site_calls->call_status) . "</td></tr>\n";
-	echo "<tr><td>Date</td><td>" . $call_date . "</td></tr>\n";
+	echo "<tr><td>Estado</td><td>" . call_status($site_calls->call_status) . "</td></tr>\n";
+	echo "<tr><td>Fecha</td><td>" . $call_date . "</td></tr>\n";
 	if ($call_status ==1){
 		echo "<tr><td>Closed</td><td>" . date('Y-m-d',$site_calls->call_date2) . "</td></tr>\n";
 	}
@@ -50,7 +50,7 @@ $site_calls = $db->get_row("SELECT call_id,call_first_name,call_last_name,call_p
 	echo "<tr><td>Tipo de solicitud</td><td>$request_name</td></tr>\n";
 	echo "<tr><td>Dispositivo</td><td>$device_name</td></tr>\n";
 	echo "<tr><td>Detalles</td><td style='width: 500px;'>".$site_calls->call_details."</td></tr>\n";
-	echo "<tr><td>Solucionn</td><td style='width: 500px;'>".$site_calls->call_solution."</td></tr>\n";
+	echo "<tr><td>Solucion</td><td style='width: 500px;'>".$site_calls->call_solution."</td></tr>\n";
 	echo "<tr><td>Staff</td><td>$staff_name</td></tr>\n";
 
 //********** manage file upload
