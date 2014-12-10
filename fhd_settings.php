@@ -34,7 +34,7 @@ $fhddate = date_format($date, 'U')
 <a href="fhd_users.php?support_staff=show" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Staff de soporte</a>
 
 <hr>
-<h4>Configuración Mesa de Ayuda <small>from: fhd_config.php</small></h4>
+<h4>Configuración Mesa de Ayuda <small>  </small></h4>
 
 <table class="<?php echo $table_style_1;?>" style='width: auto;'>
 <tr>
@@ -103,11 +103,6 @@ if ( !is_writable( dirname ( $upload_path ) ) ) {
 <tr>
 	<td>Nombre de base de dato</td>
 	<td><?php echo db_name;?></td>
-</tr> 
-
-<tr>
-	<td>CSS <a href="http://bootswatch.com/" target="_blank" class="btn btn-default btn-xs">Muestras</a></td>
-	<td><?php echo css;?></td>
 </tr> 
 
 </table>
