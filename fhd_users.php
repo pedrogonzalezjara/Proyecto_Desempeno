@@ -5,7 +5,7 @@ include("includes/checksession.php");
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Users</title>
+	<title>Usuarios</title>
 <?php
 include("fhd_config.php");
 include("includes/header.php");
@@ -30,8 +30,8 @@ if (isset($_GET['support_staff'])){
 $myquery = "SELECT user_id,user_name,user_email,user_pending,user_level,user_protect_edit,user_msg_send from site_users where 1 $pending order by user_level,user_id desc;";
 $site_calls = $db->get_results($myquery);
 $num = $db->num_rows;
-echo "<p><a href='fhd_settings.php'>Settings</a></p>";
-echo "<h4>$num $title Users</h4>";
+echo "<p><a href='fhd_settings.php'>Configuracion</a></p>";
+echo "<h4>$num $title Usuario(s)</h4>";
 if ($num > 0){
 ?>
 
@@ -42,9 +42,9 @@ if ($num > 0){
 	<th>Nombre</th>
 	<th>Email</th>
 	<th>Nivel</th>
-	<th>Email Actualización de consulta</th>
+	<th>Email de Actualización de consulta</th>
 	<th>Pendiente</th>
-	<th>Editar bloqueado</th>
+	<th>Edicion bloqueada</th>
 </tr>
 <?php
 foreach ( $site_calls as $call )
@@ -75,6 +75,6 @@ foreach ( $site_calls as $call )
 
 <?php
 if(isset($_SESSION['user_name'])){
-	echo "<h5>Current User: " . $_SESSION['user_name'] . "</h5>";
+	echo "<h5>Usuario Actual: " . $_SESSION['user_name'] . "</h5>";
 }
 include("includes/footer.php");
