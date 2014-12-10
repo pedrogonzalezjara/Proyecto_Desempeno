@@ -141,7 +141,7 @@ $user_msg_send = $site_users->user_msg_send;
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <input type="submit" value="update" class="btn btn-primary btn-lg">
+      <input type="submit" value="actualizar" class="btn btn-primary btn-lg">
     </div>
   </div>
 <input type='hidden' name='nacl' value='<?php echo $nacl;?>'>

@@ -6,7 +6,7 @@ include("includes/checksession.php");
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Note Add/Edit</title>
+	<title>añadir/editar notas</title>
 <?php
 include("fhd_config.php");
 include("includes/header.php");
@@ -31,7 +31,7 @@ if (isset($_POST['update'])){
 		}
  }else{
 	//not verified, warning and exit!
-	echo "<p>Warning: Verification Error!</p>";
+	echo "<p>Alerta: Error de verificación!</p>";
  	exit;
 }
 }
@@ -60,12 +60,12 @@ if (isset($_POST['add'])){
 		$message = "
 		<html>
 		<head>
-		<title>Ticket Updated</title>
+		<title>Actualizar consulta</title>
 		</head>
 		<body>
-		<p>Ticket Updated.</p>
-		<p>Ticket Number: $note_relation</p>
-		<p>Note Details: $note_body</p>
+		<p>Actualizar consulta.</p>
+		<p>Numero de consulta: $note_relation</p>
+		<p>detalles: $note_body</p>
 		";
 		mail($call_email, $subject, $message, $headers);
 		$mailsent = "&mailsent=yes";
@@ -83,7 +83,7 @@ if (isset($_POST['add'])){
 
  }else{
 	//not verified, warning and exit!
-	echo "<p>Warning: Verification Error.</p>";
+	echo "<p>Alerta: Error de verificación!</p>";
  	exit;
 }
 }
@@ -138,6 +138,6 @@ $nacl = md5(AUTH_KEY.$db->get_var("select user_password from site_users where us
 <?php
 if(isset($_SESSION['name'])){
 	
-	echo "<br /><p><strong>Login Name:</strong> " . $_SESSION['name'] . "</p>";
+	echo "<br /><p><strong>Nombre de usuario:</strong> " . $_SESSION['name'] . "</p>";
 }
 include("includes/footer.php");
