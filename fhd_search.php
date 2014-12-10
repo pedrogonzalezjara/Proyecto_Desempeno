@@ -66,12 +66,12 @@ echo "<h4><small>[ ".$num." ] found</small></h4>";
 <table class="<?php echo $table_style_3;?>" style='width: auto;'>
 <tr>
 	<th colspan="<?php echo $colspan;?>" style='text-align: center;'>Action</th>
-	<th>Status</th>
-	<th>Date</td>
-	<th>Name</th>
-	<th>Type</th>
-	<th>Dept</th>
-	<th>Device</th>
+	<th>Estado</th>
+	<th>Fecha</td>
+	<th>Nombre</th>
+	<th>Tipo</th>
+	<th>Departamento</th>
+	<th>Dispositivo</th>
 </tr>
 <?php
 foreach ( $site_calls as $call )
@@ -157,7 +157,7 @@ foreach ($request_name as $request )
 <?php } ?>
 	</select></td></tr>
 
-	<tr><td>Device</td><td><select name='call_device'>
+	<tr><td>Dispositivo</td><td><select name='call_device'>
 	<option value="">Choose</option>	
 	<?php $device_name = $db->get_results("select type_id,type_name from site_types where type=3 order by type_name;");
 foreach ($device_name as $device )
@@ -166,11 +166,11 @@ foreach ($device_name as $device )
 <?php } ?>
 	</select></td></tr>
 
-	<tr><td style="vertical-align: top">Details</td><td><input type="text" name="call_details" size="45"></td></tr>
-	<tr><td style="vertical-align: top">Solution</td><td><input type="text" name="call_solution" size="45"></td></tr>
+	<tr><td style="vertical-align: top">Detalles</td><td><input type="text" name="call_details" size="45"></td></tr>
+	<tr><td style="vertical-align: top">Solucion</td><td><input type="text" name="call_solution" size="45"></td></tr>
 
 	<tr><td>Staff</td><td><select name='call_staff'>
-	<option value="">Choose</option>
+	<option value="">Elegir</option>
 	<?php $staff_name = $db->get_results("select user_id,user_name from site_users where user_level<>1 order by user_name;");
 foreach ($staff_name as $staff )
 {?>
@@ -179,7 +179,7 @@ foreach ($staff_name as $staff )
 	</select></td></tr>
 </table>
 <input type="hidden" name="search" value="1">
-<input type="submit" value="search" class="btn btn-primary">
+<input type="submit" value="Buscar" class="btn btn-primary">
 </form>
 <br>
 <?php

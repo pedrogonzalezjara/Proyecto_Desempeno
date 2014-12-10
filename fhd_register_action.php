@@ -13,13 +13,13 @@ include("includes/functions.php");
 //initilize db
 $db = new ezSQL_mysqli(db_user,db_password,db_name,db_host);
 
-<<<<<<< HEAD
 if (ALLOW_REGISTER <> "yes"){
-	echo "<p>El registro esta cerrado</p>";
-=======
+	echo "<p>Registration is Closed</p>";
+	include("includes/footer.php");
+	exit;
+	}
 if (ALLOW_REGISTER <> "no"){
 	echo "<p>Registration is Closed</p>";
->>>>>>> origin/master
 	include("includes/footer.php");
 	exit;
 	}
@@ -120,7 +120,7 @@ $subject = FHD_TITLE . ' New Registration';
 $message = '
 <html>
 <head>
-  <title>Nuevo </title>
+  <title>Nuevo registro </title>
 </head>
 <body>
   <p>Ingrese sus datos</p>
@@ -138,8 +138,8 @@ $headers .="Content-type: text/html; charset=iso-8859-1" . "\r\n";
 mail($to, $subject, $message, $headers);
 ?>
 
-<h3>Registration Received</h3>
+<h3>Registro recibido</h3>
 
-<h4><a href="index.php">Login</a></h4>
+<h4><a href="index.php">Conectarse</a></h4>
 
 <?php include("includes/footer.php");
