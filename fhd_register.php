@@ -8,26 +8,26 @@ $_SESSION['captcha'] = simple_php_captcha();
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Register</title>
+	<title>Registrarse</title>
 <?php
 include("includes/ajax.php");
 include("fhd_config.php");
 include("includes/header.php");
 if (ALLOW_REGISTER <> "yes"){
-	echo "<div class=\"alert alert-info\" style=\"width: 175px;\">Registration is Closed</div>";
+	echo "<div class=\"alert alert-info\" style=\"width: 175px;\">El registro esta cerrado</div>";
 	include("includes/footer.php");
 	exit;
 	}
 ?>
-<h1><?php echo FHD_TITLE; ?> Register</h1>
+<h1><?php echo FHD_TITLE; ?> registrarse</h1>
 <table class="<?php echo $table_style_2;?>" style='width: auto;'>
 <form action="fhd_register_action.php" method="post" class="form-horizontal">
 <tr>
-	<td>your name:</td>
+	<td>Su nombre:</td>
 	<td><input type="text" name="name" id="name"></td>
 </tr>
 <tr>
-	<td>login name:</td>
+	<td>Nombre de usuario:</td>
 	<td><input type="text" name="login" onblur="showResult(this.value)" required> <span id="txtHint"></span></td>
 </tr>
 <tr>
@@ -35,7 +35,7 @@ if (ALLOW_REGISTER <> "yes"){
 	<td><input type="text" id="email" name="email" placeholder="name@example.com"></td>
 </tr>
 <tr>
-	<td>password:</td>
+	<td>Clave:</td>
 	<td><input type="password" id="password" name="password" placeholder="at least 5 characters"></td>
 </tr>
 <?php
@@ -44,7 +44,7 @@ if (CAPTCHA_REGISTER == "yes"){
 ?>
 <tr>
 	<td><?php echo $captchaimg;?></td>
-	<td>Enter Code<br><input type="text" name="captcha" id="captcha" required></td>
+	<td>Ingrese codigo<br><input type="text" name="captcha" id="captcha" required></td>
 </tr>
 <?php } ?>
 </table>
@@ -68,22 +68,22 @@ if (CAPTCHA_REGISTER == "yes"){
 <!-- validation -->
 <script type="text/javascript">
 var name = new LiveValidation( 'name', {wait: 500, validMessage: "Thank you" } );
-name.add( Validate.Presence, { failureMessage: " Required" } );
+name.add( Validate.Presence, { failureMessage: " este dato es requerido" } );
 name.add( Validate.Length, { minimum: 2 } );
 
 var email = new LiveValidation( 'email', {wait: 500, validMessage: "Thank you" } );
-email.add( Validate.Presence, { failureMessage: " Required" } );
+email.add( Validate.Presence, { failureMessage: " este dato es requerido" } );
 email.add( Validate.Email );
 
 var password = new LiveValidation( 'password', {wait: 500, validMessage: "Thank you" } );
-password.add( Validate.Presence, { failureMessage: " Required" } );
+password.add( Validate.Presence, { failureMessage: " este dato es requerido" } );
 password.add( Validate.Length, { minimum: 5 } );
 
 var captcha = new LiveValidation( 'captcha', {wait: 2000, validMessage: "Thank you" } );
-captcha.add( Validate.Presence, { failureMessage: " Required" } );
+captcha.add( Validate.Presence, { failureMessage: " este dato es requerido" } );
 captcha.add( Validate.Length, { minimum: 5 } );
 </script>
 
-<h4><i class="fa fa-arrow-left"></i> <a href="index.php">back</a></h4>
+<h4><i class="fa fa-arrow-left"></i> <a href="index.php">Volver</a></h4>
 
 <?php include("includes/footer.php");
