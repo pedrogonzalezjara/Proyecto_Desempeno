@@ -41,7 +41,7 @@ $type = checkid($_GET['type']);
 $nacl = md5(AUTH_KEY.$db->get_var("select user_password from site_users where user_id = $user_id;"));
 ?>
 
-<h4>Add: <?php show_type_name($type);?></h4>
+<h4>añadir: <?php show_type_name($type);?></h4>
 
 <table class="<?php echo $table_style_3;?>" style='width: auto;'>
 <form action="fhd_add_type.php" method="post" class="form-horizontal">
@@ -50,7 +50,7 @@ $nacl = md5(AUTH_KEY.$db->get_var("select user_password from site_users where us
 <?php
 if ($type <> 0) { ?>
 	<tr><td>Name: </td><td><input type='text' name='type_name'></td></tr>
-	<tr><td colspan='2'><input type='submit' value='add' class='btn btn-primary'></td></tr>
+	<tr><td colspan='2'><input type='submit' value='añadir' class='btn btn-primary'></td></tr>
 	</table>
 <?php  }
 if ($type == 0) { ?>
@@ -58,12 +58,12 @@ if ($type == 0) { ?>
 	<tr><td>Email</td><td><input type='text' name='type_email'></td></tr>
 	<tr><td>Lugar</td><td><input type='text' name='type_location'></td></tr>
 	<tr><td>Telefono</td><td><input type='text' name='type_phone'></td></tr>
-	<tr><td colspan='2'><input type='submit' value='add' class='btn btn-primary'></td></tr>
+	<tr><td colspan='2'><input type='submit' value='añadir' class='btn btn-primary'></td></tr>
 	</table>
 <?php }?>
 </form>
 </table>
-<h5><i class="fa fa-arrow-left"></i> <a href="fhd_settings_action.php?type=<?php echo $type;?>">Back to <?php echo show_type_name($type);?></a></h5>
+<h5><i class="fa fa-arrow-left"></i> <a href="fhd_settings_action.php?type=<?php echo $type;?>">volver a <?php echo show_type_name($type);?></a></h5>
 
 <?php
 if(isset($_SESSION['name'])){
