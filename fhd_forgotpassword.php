@@ -7,7 +7,7 @@ include("fhd_simple-php-captcha.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Forgot Password</title>
+	<title>Contraseña olvidada</title>
 <?php
 include("fhd_config.php");
 include("includes/header.php");
@@ -41,14 +41,14 @@ if (isset($_GET['action'])) {
 			//send out the message
 			$from = FROM_EMAIL;
 			$to    = $user_email;
-			$subject = 'Your new password';
+			$subject = 'Su Nueva Clave';
 			// message
 			$message = '
 			<html>
 			<body>
-			  <p>HelpDesk New Password</p>
+			  <p>Nueva clade de la mesa de ayuda</p>
 			  <p>Email: ' . $user_email . '</p>
-			  <p>Password: ' .  $user_password_plain. '</p>
+			  <p>Clave: ' .  $user_password_plain. '</p>
 			</body>
 			</html>
 			';
@@ -58,13 +58,13 @@ if (isset($_GET['action'])) {
 			$headers .="MIME-Version: 1.0" . "\r\n";
 			$headers .="Content-type: text/html; charset=iso-8859-1" . "\r\n";
 			mail($to, $subject, $message, $headers);
-			$message = "Check your email for your new password.";
+			$message = "Revise su Email por su nueva clave.";
 			//if key is wrong, then no records will be found, give this error.
 			} else {
-			$message = "Error, invalid password reset key";
+			$message = "Error,Clave de restauracion invalida";
 			}
 		}else {
-		$message = "Error, password reset key is blank.";
+		$message = "Error, La clave de restauracion esta en blanco.";
 		}
 		} else {
 		$message = "Error";
@@ -81,7 +81,7 @@ if (isset($_POST['try'])) {
 		$captchasession = $_SESSION['captcha']['code'];
 		$captcha = $db->escape(trim($_POST['captcha']));
 		if($captchasession <> $captcha) {
-			echo "<div class=\"alert alert-danger\" style=\"max-width: 200px;\"><a href='fhd_forgotpassword.php'>Invalid Captcha Code</a></div>";
+			echo "<div class=\"alert alert-danger\" style=\"max-width: 200px;\"><a href='fhd_forgotpassword.php'>Codigo Invalido</a></div>";
 			include("includes/footer.php");
 			exit;
 		}
@@ -90,14 +90,14 @@ if (isset($_POST['try'])) {
     // clicked on the submit button
    if(empty($_POST['user_email'])) {
     // At least one of the file is empty, display an error
-    echo '<p style="color: red;">email address is required</p>';
+    echo '<p style="color: red;">Se requiere de la dirrecion Email</p>';
 } else {
     // User has filled it all in.
 	//run the password reset.
 	$user_email = $db->escape( $_POST['user_email'] );
 
 		if( !filter_var($user_email, FILTER_VALIDATE_EMAIL) ) {
-			echo "<div class=\"alert alert-danger\" style=\"max-width: 350px;\">That email address appears to be invalid.</div>";
+			echo "<div class=\"alert alert-danger\" style=\"max-width: 350px;\">esa direccion Email es invalida.</div>";
 			include("includes/footer.php");
 			exit;
 		}
@@ -119,13 +119,13 @@ if (isset($_POST['try'])) {
 		//send out the message
 		$from = FROM_EMAIL;
 		$to   = $user_email;
-		$subject = 'HelpDesk Confirmation';
+		$subject = 'Confirmacion de la mesa de ayuda';
 		// message
 		$message = '
 		<html>
 		<body>
-		  <p>Here is the HelpDesk reset code as requested.</p>
-		  <p>To reset your password visit the following address, otherwise just ignore this email and nothing will happen.</p>
+		  <p>Aqui esta la clave de restauracion como fue solicitado.</p>
+		  <p>Para Restaurar la clave porfavor visite la siguiente direcion, de lo contrario Ignore este Email y no se realizara ningun cambio.</p>
 		  <p><a href="http://' . $thedomain . '?action=rp&key='. $resetpasswordcode . '">http://' . $thedomain . '?action=rp&key='. $resetpasswordcode . '</a></p>
 		</body>
 		</html>
@@ -136,15 +136,15 @@ if (isset($_POST['try'])) {
 		$headers .= 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 		mail($to, $subject, $message, $headers);
-		$message = "Check your e-mail for the confirmation link. (be sure to check your spam folders also)";
+		$message = "Revise su Email para el link de confirmacion(recuerda revisar su bandeja de Spam).";
 	} else {
-		$message = "Error, email address not found, or your registration is still pending.";
+		$message = "Error, La direccion de Email no fue encontrada o su Registro esta en estado Pendiente.";
 	}
 }
 }
 ?>
 
-<h2>Forgot Password</h2>
+<h2>Recuperar Clave </h2>
 
 <?php if ($finish == 1) { ?>
 	<p><?php echo $message;?></p>
@@ -154,7 +154,7 @@ if (isset($_POST['try'])) {
 <div class="form-group">
     <label for="user_email" class="col-sm-2 control-label">Email</label>
 	<div class="col-sm-3">
-	<input type="email" class="form-control" name="user_email" id="user_email" placeholder="Enter Email" required>
+	<input type="email" class="form-control" name="user_email" id="user_email" placeholder="Ingrese Email" required>
 	</div>
 </div>
 
@@ -166,21 +166,21 @@ if (CAPTCHA_RESET_PASSWORD == "yes"){
 <div class="form-group">
     <label for="captcha" class="col-sm-2 control-label"><?php echo $captchaimg; ?></label>
 	<div class="col-sm-3">
-	<input type="text" class="form-control" name="captcha" id="captcha" placeholder="Enter Code">
+	<input type="text" class="form-control" name="captcha" id="captcha" placeholder="Ingrese Codigo">
 	</div>
 </div>
 <?php } ?>
 
  <div class="form-group">
 	<div class="col-sm-offset-2 col-sm-10">
-	<button type="submit" value="enter" class="btn btn-default">Submit</button>
+	<button type="submit" value="enter" class="btn btn-default">Enviar</button>
 	</div>
 </div>
 
 <input type="hidden" name="try" value="true">
 </form>
 
-<p><a href="index.php">back to login page</a> &bull; <a href="fhd_forgotpassword.php">reload page</a></p>
+<p><a href="index.php">Devolverse a la pagina Inicial</a> &bull; <a href="fhd_forgotpassword.php">Recargar Pagina</a></p>
 
 <?php } 
 include("includes/footer.php");

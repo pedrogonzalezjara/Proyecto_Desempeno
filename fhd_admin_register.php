@@ -7,7 +7,7 @@ include("includes/checksessionadmin.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Add User Details</title>
+	<title>Añadir datos de usuario</title>
 <?php 
 include("fhd_config.php");
 include("includes/header.php");
@@ -26,7 +26,7 @@ if (isset($_POST['nacl'])){
 		//check email exists
 		$num = $db->get_var("select count(user_email) from site_users where (user_email = '$user_email');");
 		if ($num > 0) {
-		echo "<div class='alert alert-danger'><strong>Error:</strong> that email address is already in use.</div>";
+		echo "<div class='alert alert-danger'><strong>Error:</strong> El Email ya esta Registrado.</div>";
 		include("includes/footer.php");
 		exit;
 		}
@@ -35,7 +35,7 @@ if (isset($_POST['nacl'])){
 	if( strlen($_POST['user_password'] ) > 4){
 		$user_password = makepwd( trim( $db->escape( $_POST['user_password'] ) ) );
 	}else{
-		echo "<div class='alert alert-danger'><strong>Error:</strong> password to short.</div>";
+		echo "<div class='alert alert-danger'><strong>Error:</strong> La Clave es muy corta (debe Contener mas de 4 digitos).</div>";
 		include("includes/footer.php");
 		exit;
 	}
@@ -51,7 +51,7 @@ if (isset($_POST['nacl'])){
 //$db->debug();
         $actionstatus = "<div class=\"alert alert-success\" style=\"max-width: 250px;\">
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-    User Added.
+    Usuario añadido.
     </div>";
  }
 }
@@ -60,48 +60,40 @@ if (isset($_POST['nacl'])){
 $nacl = md5(AUTH_KEY.$db->get_var("select last_login from site_users where user_id = $user_id;"));
 ?>
 
-<h4>Add User</h4>
+<h4>Añadir Usuario</h4>
 <?php echo $actionstatus;?>
 
 <form action="fhd_admin_register.php" method="post" class="form-horizontal" data-parsley-validate>
 <table class="<?php echo $table_style_2;?>" style='width: auto;'>
-	<tr><td>User Login*</td>
+	<tr><td>Nombre De Usuario*</td>
 	<td><input type="text" name="user_login" required></td></tr>
 
 	<tr><td>Email*</td>
 	<td><input type="text" name="user_email" required data-parsley-type="email"></td></tr>		
 	
-	<tr><td>Password*</td>
+	<tr><td>Clave*</td>
 	<td><input type="text" name="user_password" required  data-parsley-minlength="4"></td></tr>		
 
-	<tr><td>Name*</td>
+	<tr><td>Nombre*</td>
 	<td><input type="text" name="user_name" required></td></tr>
 
-	<tr><td>Phone</td>
+	<tr><td>Telefono</td>
 	<td><input type="text" name="user_phone" size="15"></td></tr>
 	
-	<tr><td>Address</td>
+	<tr><td>Direccion</td>
 	<td><input type="text" name="user_address" size="25"></td></tr>
 	
-	<tr><td>City</td>
+	<tr><td>Ciudad</td>
 	<td><input type="text" name="user_city" size="25"></td></tr>
 
-	<tr><td>State</td>
-	<td><input type="text" name="user_state" size="15"></td></tr>
-
-	<tr><td>Zip</td>
-	<td><input type="text" name="user_zip" size="15"></td></tr>
-
-	<tr><td>Country</td>
-	<td><input type="text" name="user_country" size="25"></td></tr>
 
 </table>
 <input type='hidden' name='nacl' value='<?php echo $nacl;?>'>
-<input type="submit" value="Add User" class="btn btn-primary">
+<input type="submit" value="Añadir usuario" class="btn btn-primary">
 </form>
 
 <?php
 if(isset($_SESSION['name'])){
-	echo "<p><strong>Name:</strong> " . $_SESSION['name'] . "</p>";
+	echo "<p><strong>Nombre:</strong> " . $_SESSION['name'] . "</p>";
 }
 include("includes/footer.php");

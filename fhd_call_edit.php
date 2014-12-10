@@ -7,7 +7,7 @@ include("includes/checksession_ss.php");
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ticket Details</title>
+	<title>detalle de consulta</title>
 <?php 
 include("fhd_config.php");
 include("includes/header.php");
@@ -101,7 +101,7 @@ if (isset($_POST['nacl'])){
 		$del_link = "fhd_call_edit.php?call_id=$call_id&action=delete&nacl=$nacl";
 		//echo $del_link;
 		//exit;
-		header("Location: $del_link");
+		header("lugar: $del_link");
 		}
 
 	$call_date = strtotime($db->escape($_POST['call_date']));
@@ -136,7 +136,7 @@ if (isset($_POST['nacl'])){
 
 	$actionstatus = "<div class=\"alert alert-success\" style=\"max-width: 250px;\">
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-    Call Updated.
+    Actualizado.
     </div>";
  }
 }
@@ -155,7 +155,7 @@ $site_calls = $db->get_row("SELECT call_id,call_first_name,call_last_name,call_p
 	$call_id = $site_calls->call_id;
 	$call_user = $site_calls->call_user;
 	if ($call_user == 0){
-		$call_user = "Not Registered";
+		$call_user = "No Registrado";
 	}
 	$call_request = $site_calls->call_request;
 	$request_name = $db->get_var("SELECT type_name from site_types WHERE (type_id = $call_request);");
@@ -166,24 +166,24 @@ $site_calls = $db->get_row("SELECT call_id,call_first_name,call_last_name,call_p
 	$call_staff = $site_calls->call_staff;
 	$staff_name = $db->get_var("SELECT user_name from site_users WHERE (user_id = $call_staff);");
 ?>
-	<tr><td valign="top" style="width: 150px;">Status</td>
+	<tr><td valign="top" style="width: 150px;">Estado</td>
 	<td><select name='call_status'>
-	<option value='0'<?php if($site_calls->call_status == 0){echo ' selected';}?>>active</option>
-	<option value='1'<?php if($site_calls->call_status == 1){echo ' selected';}?>>closed</option>
-	<option value='3'<?php if($site_calls->call_status == 3){echo ' selected';}?>>deleted</option>
+	<option value='0'<?php if($site_calls->call_status == 0){echo ' selected';}?>>activo</option>
+	<option value='1'<?php if($site_calls->call_status == 1){echo ' selected';}?>>cerrado</option>
+	<option value='3'<?php if($site_calls->call_status == 3){echo ' selected';}?>>eliminado</option>
 	</select> &nbsp; <a href="fhd_call_edit.php?call_id=<?php echo $call_id;?>&action=delete&nacl=<?php echo $nacl;?>" onclick="return confirm('Are you sure you want to delete?')"><i class="fa fa-times" title="DELETE"></i></a>
 	</td></tr>
 	
-	<tr><td>Date</td></td>
+	<tr><td>Fecha</td></td>
 	<td>
 	<input type="text" name="call_date" value="<?php echo date("Y-m-d",($site_calls->call_date + (FHD_TIMEADJUST * 3600)));?>" id="datepicker" class="input-small"></td></tr>	
 
 	<?php if ($site_calls->call_status == 1){ ?>
-	<tr><td><strong>Closed</strong></td></td>
+	<tr><td><strong>Cerrado</strong></td></td>
 	<td><?php echo date('Y-m-d',$site_calls->call_date2);?><input type="hidden" name="call_date2" value="<?php echo date('Y-m-d',$site_calls->call_date2);?>"></td></tr>
 	<?php } ?>
 	
-	<tr><td>Name</td>
+	<tr><td>Nombre</td>
 	<td><input type="text" name="call_first_name" value="<?php echo $site_calls->call_first_name;?>" class="input-xlarge"> 
 	<small><?php echo $call_user;?></small>
 	</td></tr>
@@ -191,10 +191,10 @@ $site_calls = $db->get_row("SELECT call_id,call_first_name,call_last_name,call_p
 	<tr><td>Email</td>
 	<td><input type="text" name="call_email" value="<?php echo $site_calls->call_email;?>" class="input-xlarge"></td></tr>
 	
-	<tr><td>Phone</td>
+	<tr><td>Telefono</td>
 	<td><input type="text" name="call_phone" value="<?php echo $site_calls->call_phone;?>" class="input-medium"></td></tr>
 
-	<tr><td>Dept</td><td><select name='call_department'>
+	<tr><td>Departamento</td><td><select name='call_department'>
 	<?php $call_dept = $db->get_results("select type_id,type_name from site_types where type=1");
 foreach ($call_dept as $dept )
 {?>
@@ -202,7 +202,7 @@ foreach ($call_dept as $dept )
 <?php } ?>
 	</select></td></tr>
 
-	<tr><td>Request</td><td><select name='call_request'>
+	<tr><td>tipo de solicitud</td><td><select name='call_request'>
 	<?php $request_name = $db->get_results("select type_id,type_name from site_types where type=2");
 foreach ($request_name as $request )
 {?>
@@ -210,15 +210,15 @@ foreach ($request_name as $request )
 <?php } ?>
 	</select></td></tr>
 
-	<tr><td>Device</td><td><select name='call_device'>
+	<tr><td>Dispositivo</td><td><select name='call_device'>
 	<?php $device_name = $db->get_results("select type_id,type_name from site_types where type=3");
 foreach ($device_name as $device )
 {?>
 	<option value='<?php echo $device->type_id;?>'<?php if($device->type_id == $call_device){echo ' selected';}?>><?php echo $device->type_name;?></option>
 <?php } ?>
 	</select></td></tr>
-	<tr><td valign="top">Details</td><td><textarea rows="4" name="call_details" style="width: 100%"><?php echo $site_calls->call_details;?></textarea></td></tr>
-	<tr><td valign="top">Solution</td><td><textarea rows="4" name="call_solution" style="width: 100%"><?php echo $site_calls->call_solution;?></textarea></td></tr>
+	<tr><td valign="top">Detalles</td><td><textarea rows="4" name="call_details" style="width: 100%"><?php echo $site_calls->call_details;?></textarea></td></tr>
+	<tr><td valign="top">Solucion</td><td><textarea rows="4" name="call_solution" style="width: 100%"><?php echo $site_calls->call_solution;?></textarea></td></tr>
 	<tr><td>Staff</td><td><select name='call_staff'>
 	<?php $staff_name = $db->get_results("select user_id,user_name from site_users where user_level<>1 order by user_name;");
 foreach ($staff_name as $staff )
@@ -261,7 +261,7 @@ if ( $filecount > 0 ) {
 //i notes is set at the top of this file.
 if ($isnotes > 0){
 	echo "<a name='notes'></a>\n";
-	echo "<table class='$table_style_3' style='width: 75%'><tr>\n<th>User</th>\n<th>Date</th>\n<th>Contents</th>\n<th colspan='2'>Actions</th>\n</tr>\n";
+	echo "<table class='$table_style_3' style='width: 75%'><tr>\n<th>Usarios</th>\n<th>fecha</th>\n<th>Contenidos</th>\n<th colspan='2'>Acciones</th>\n</tr>\n";
 	$site_notes = $db->get_results("SELECT note_id,note_title,note_body,note_type,note_post_date,note_post_user from site_notes WHERE (note_relation = $call_id) AND note_type = 1 order by note_id desc;");
 	foreach ( $site_notes as $note )
 	{

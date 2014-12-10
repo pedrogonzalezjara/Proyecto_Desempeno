@@ -9,8 +9,8 @@ if (ALLOW_REGISTER == "yes"){
 	$q = $db->escape($q);
 	$num = $db->get_var("select count(user_login) from site_users where user_login = '$q';");
 	if ($num == 0){
-		echo "<i class='glyphicon glyphicon-ok'></i> <small><em>available</em></small>";
+		echo "<i class='glyphicon glyphicon-ok'></i> <small><em>Disponible</em></small>";
 		}else{
-		echo "<i class='glyphicon glyphicon-ban-circle'></i> <small><em>name not available</em></small>";
+		echo "<i class='glyphicon glyphicon-ban-circle'></i> <small><em>No Disponible</em></small>";
 	}
 }

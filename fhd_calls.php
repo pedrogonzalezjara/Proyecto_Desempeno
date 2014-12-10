@@ -5,7 +5,7 @@ include("includes/checksession.php");
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Open Tickets</title>
+	<title>Consultas Abiertas</title>
 <?php
 include("fhd_config.php");
 include("includes/header.php");
@@ -30,20 +30,20 @@ $myquery = "SELECT call_id,call_date,call_first_name,call_last_name,call_request
 $site_calls = $db->get_results($myquery);
 $num = $db->num_rows;
 //$db->debug();
-echo "<h4><i class='fa fa-tags'></i> &nbsp; Open Tickets <small>[ $num ]</small></h4>";
+echo "<h4><i class='fa fa-tags'></i> &nbsp; Consultas abiertas <small>[ $num ]</small></h4>";
 if ($num > 0){
 ?>
 <table class="<?php echo $table_style_1;?>" style='width: auto;'>
 <tr>
 	<th colspan="<?php echo $colspan;?>" style='text-align: center;'>Action</th>
 	<?php if($user_level <> 1){?>
-	<th>Name</th>
+	<th>Nombrfe</th>
 	<?php } ?>
-	<th>Notes</th>
-	<th>Date</th>
-	<th>Type</th>
-	<th>Dept</th>
-	<th>Device</th>
+	<th>Notas</th>
+	<th>fechas</th>
+	<th>Tipo</th>
+	<th>Departamento</th>
+	<th>Dispositivos</th>
 </tr>
 <?php
 foreach ( $site_calls as $call )

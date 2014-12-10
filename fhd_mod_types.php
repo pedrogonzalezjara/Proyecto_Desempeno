@@ -31,7 +31,7 @@ if (isset($_POST['nacl'])){
 	$db->query("UPDATE site_types SET type_name='$type_name' WHERE type_id = $type_id;");
     $actionstatus = "<div class=\"alert alert-success\" style=\"max-width: 250px;\">
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-    Updated.
+    Actualizado.
     </div>";
  }
 }
@@ -42,14 +42,14 @@ $type_id = checkid($_GET['id']);
 $num = $db->get_var("select count(type_id) from site_types where type_id = $type_id;");
 
 if ($num == 0) {
-	echo "<p>Type does not exist (error 2)</p>";
+	echo "<p>No existe ese tipo (error 2)</p>";
 	include("includes/footer.php");
 	exit;
 }
 $nacl = md5(AUTH_KEY.$db->get_var("select last_login from site_users where user_id = $user_id;"));
 ?>
 
-<h4>Edit Type</h4>
+<h4>Editar Tipo</h4>
 <?php echo $actionstatus;?>
 
 <?php if ($num > 0) { 
@@ -83,11 +83,11 @@ $type_phone = $site_type->type_phone;
 
 } 
 ?>
-<h5><i class="fa fa-arrow-left"></i> <a href="fhd_settings_action.php?type=<?php echo $type;?>">Back to <?php echo show_type_name($type);?></a></h5>
+<h5><i class="fa fa-arrow-left"></i> <a href="fhd_settings_action.php?type=<?php echo $type;?>">Volver a<?php echo show_type_name($type);?></a></h5>
 
 <?php
 if(isset($_SESSION['name'])){
 	
-	echo "<br /><p><strong>Login Name:</strong> " . $_SESSION['name'] . "</p>";
+	echo "<br /><p><strong>Nombre de usuario:</strong> " . $_SESSION['name'] . "</p>";
 }
 include("includes/footer.php");

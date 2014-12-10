@@ -13,11 +13,11 @@ $db = new ezSQL_mysqli(db_user,db_password,db_name,db_host);
 if (isset($_GET['nacl'])){
 
 	if ( $_GET['nacl'] <> md5(AUTH_KEY.$db->get_var("select last_login from site_users where user_id = $user_id;")) ) {
-		echo "<div class=\"alert alert-danger\" style=\"max-width: 200px;\"><i class='glyphicon glyphicon-ban-circle'></i> Authentication Error</div>";
+		echo "<div class=\"alert alert-danger\" style=\"max-width: 200px;\"><i class='glyphicon glyphicon-ban-circle'></i>Error de autenticación </div>";
 		exit;
 	}
 }else{
-	echo "<div class=\"alert alert-danger\" style=\"width: 200px;\"><i class='glyphicon glyphicon-ban-circle'></i> Authentication Error</div>";
+	echo "<div class=\"alert alert-danger\" style=\"width: 200px;\"><i class='glyphicon glyphicon-ban-circle'></i> Error de autenticación</div>";
 	exit;
 }
 

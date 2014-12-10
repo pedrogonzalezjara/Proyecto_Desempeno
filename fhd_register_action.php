@@ -13,7 +13,7 @@ include("includes/functions.php");
 //initilize db
 $db = new ezSQL_mysqli(db_user,db_password,db_name,db_host);
 
-if (ALLOW_REGISTER <> "no"){
+if (ALLOW_REGISTER <> "yes"){
 	echo "<p>Registration is Closed</p>";
 	include("includes/footer.php");
 	exit;
@@ -96,7 +96,7 @@ if ($password) {
 }
 
 //pending
-if (REGISTER_APPROVAL == "no"){
+if (REGISTER_APPROVAL == "yes"){
 	$user_pending = 1;
 	}else{
 	$user_pending = 0;

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Help Desk</title>
+	<title>Mesa de Ayuda</title>
 <?php
 $is_valid = 0;
 include("fhd_config.php");
@@ -11,7 +11,7 @@ include("includes/header.php");
 include("includes/functions.php");
 
 if (!isset($_SESSION['auth'])) {
-	echo "<p>Authentication Error</p><p><i class='fa fa-lock'></i></p>";
+	echo "<p>Error de autentificacion</p><p><i class='fa fa-lock'></i></p>";
 	include("includes/footer.php");
 	exit;
 }
@@ -20,7 +20,7 @@ if (!isset($_SESSION['auth'])) {
 if (isset ( $_SESSION['hit'] ) ) {
 	$_SESSION['hit'] += 1;
 	if ($_SESSION['hit'] > LOGIN_TRIES){
-		echo "<p><i class='fa fa-lock fa-2x pull-left'></i> Access Locked</p>";
+		echo "<p><i class='fa fa-lock fa-2x pull-left'></i> Acceso bloqueado</p>";
 		include("includes/footer.php");
 		exit;
 	}
@@ -35,7 +35,7 @@ $db = new ezSQL_mysqli(db_user,db_password,db_name,db_host);
 if (isset($_POST['user_login'])) {
 	$user_login = trim( $db->escape( $_POST['user_login'] ));
 }else{
-	echo "<div class='alert alert-warning' style='width: 375px;'><i class='glyphicon glyphicon-info-sign'></i> Username / Email is Required.</div>";
+	echo "<div class='alert alert-warning' style='width: 375px;'><i class='glyphicon glyphicon-info-sign'></i> Se requiere Nombre de usuario/Email.</div>";
 	include("includes/footer.php");
 	exit;
 }
@@ -62,7 +62,7 @@ if ($is_pending ==1) {
 
 if ($is_valid <> 1){
 	$_SESSION['hit'] += 1;
-	echo "<div class='alert alert-warning' style='width: 375px;'><i class='glyphicon glyphicon-info-sign'></i> Login incorrect, or your registration is pending.</div>";
+	echo "<div class='alert alert-warning' style='width: 375px;'><i class='glyphicon glyphicon-info-sign'></i> Usuario incorrecto,o su registracion esta pendiente.</div>";
 	include("includes/footer.php");
 	exit;
 }
@@ -86,7 +86,7 @@ $_SESSION['hit'] = 0;
 include("includes/all-nav.php");
 
 echo "<!-- <p>$user_id</p> -->";
-echo "<h2>Welcome, $user_name</h2>";
+echo "<h2>Bienvenido, $user_name</h2>";
 
 //record some details about this login
 $lastip = $_SERVER['REMOTE_ADDR'];
@@ -99,8 +99,8 @@ $db->query("UPDATE site_users SET last_ip = '$lastip',last_login = '$last_login'
 //$d_last_login = $db->get_var("select last_login from site_users where user_id = $num limit 1;");
 ?>
 
-<h3><a href="fhd_user_call_add.php" class="btn btn-large btn-primary btn-success">Open Ticket</a></h3>
+<h3><a href="fhd_user_call_add.php" class="btn btn-large btn-primary btn-success">Consultas abiertas</a></h3>
 
-<h3><a href="fhd_calls.php" class="btn btn-large btn-primary">View Tickets</a></h3>
+<h3><a href="fhd_calls.php" class="btn btn-large btn-primary">Ver consultas</a></h3>
 
 <?php include("includes/footer.php");

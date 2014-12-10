@@ -7,7 +7,7 @@ include("includes/checksession_ss.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Ticket Details</title>
+	<title>Detalle de consulta </title>
 <?php 
 include("fhd_config.php");
 include("includes/header.php");
@@ -64,27 +64,27 @@ $nacl = md5(AUTH_KEY.$db->get_var("select last_login from site_users where user_
 $adjdate=date('Y-m-d');
 ?>
 
-<h4><i class='fa fa-tag'></i> Add Ticket</h4>
+<h4><i class='fa fa-tag'></i>Añadir Consulta</h4>
 <?php echo $actionstatus;?>
 <form action="fhd_call_add.php" method="post" enctype="multipart/form-data" class="form-horizontal" data-parsley-validate>
 <table class="<?php echo $table_style_3;?>" style='width:75%;'>
 	<tr>
-	<td valign="top" style="width: 150px;">Status</td>
+	<td valign="top" style="width: 150px;">Estado</td>
 	<td><select name='call_status' class="input-medium">
-	<option value='0' selected>active</option>
-	<option value='1'>closed</option>
+	<option value='0' selected>activo</option>
+	<option value='1'>cerrado</option>
 	</select>
 	</td>
 	</tr>
 
 	<tr>
-	<td>Date</td>
+	<td>Fecha</td>
 	<td><!-- mktime(hour, minute, second, month, day, year) -->
 	<input type="text" name="call_date" value="<?php echo $adjdate;?>" id="datepicker" class="input-small"></td>
 	</tr>		
 	
 	<tr>
-	<td>Name</td>
+	<td>Nombre</td>
 	<td><input type="text" name="call_first_name" class="input-xlarge" required></td>
 	</tr>
 	
@@ -94,11 +94,11 @@ $adjdate=date('Y-m-d');
 	</tr>
 	
 	<tr>
-	<td>Phone</td>
+	<td>Telefono</td>
 	<td><input type="text" name="call_phone" class="input-medium"></td>
 	</tr>
 
-	<tr><td>Departtment</td><td><select name='call_department'>
+	<tr><td>Departamento</td><td><select name='call_department'>
 	<?php $call_dept = $db->get_results("select type_id,type_name from site_types where type=1 order by type_name;");
 foreach ($call_dept as $dept )
 {?>
@@ -106,7 +106,7 @@ foreach ($call_dept as $dept )
 <?php } ?>
 	</select></td></tr>
 
-	<tr><td>Request</td><td><select name='call_request'>
+	<tr><td>Tipo de Solicitud</td><td><select name='call_request'>
 	<?php $request_name = $db->get_results("select type_id,type_name from site_types where type=2 order by type_name;");
 foreach ($request_name as $request )
 {?>
@@ -114,7 +114,7 @@ foreach ($request_name as $request )
 <?php } ?>
 	</select></td></tr>
 
-	<tr><td>Device</td><td><select name='call_device'>
+	<tr><td>Dispositivo</td><td><select name='call_device'>
 	<?php $device_name = $db->get_results("select type_id,type_name from site_types where type=3 order by type_name;");
 foreach ($device_name as $device )
 {?>
@@ -123,12 +123,12 @@ foreach ($device_name as $device )
 	</select></td></tr>
 
 	<tr>
-		<td valign="top">Details</td>
+		<td valign="top">Detalles</td>
 		<td><textarea rows="3" name="call_details" style="width: 100%"></textarea></td>
 	</tr>
 	
 	<tr>
-		<td valign="top">Solution</td>
+		<td valign="top">Solución</td>
 		<td><textarea rows="3" name="call_solution" style="width: 100%"></textarea></td>
 	</tr>
 
@@ -146,7 +146,7 @@ foreach ($staff_name as $staff )
 <?php } ?>
 
 <input type='hidden' name='nacl' value='<?php echo $nacl;?>'>
-<input type="submit" value="add" class="btn btn-large btn-primary">
+<input type="submit" value="añadir" class="btn btn-large btn-primary">
 </form>
 <?php
 if(isset($_SESSION['user_name'])){

@@ -7,14 +7,14 @@ include("includes/checksessionadmin.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Administration Dashboard</title>
+	<title>Plataforma de administración</title>
 <?php
 include("fhd_config.php");
 include("includes/header.php");
 include("includes/all-nav.php");
 ?>
 
-<h4>Administration Dashboard</h4>
+<h4>Plataforma de administración</h4>
 <?php
 if(isset($_SESSION['name'])){
 	echo "<p><strong>Name:</strong> " . $_SESSION['name'] . "</p>";

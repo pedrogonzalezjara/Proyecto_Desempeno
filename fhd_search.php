@@ -6,7 +6,7 @@ include("includes/checksession.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Ticket Search</title>
+	<title>Busqueda De consultas</title>
 <?php 
 include("fhd_config.php");
 include("includes/header.php");
@@ -109,38 +109,38 @@ if($user_level <> 1){
 //</RESULTS>
 ?>
 
-<h4 id="searchform"><i class='fa fa-search'></i> Ticket Search</h4>
+<h4 id="searchform"><i class='fa fa-search'></i> Busqueda De consulta</h4>
 
 <form action="fhd_search.php" method="get" name="chooseDateForm" class="form-horizontal">
 <table class="<?php echo $table_style_3;?>" style='width: auto;'>
-	<tr><td style="vertical-align: top">Status</td>
+	<tr><td style="vertical-align: top">Estado</td>
 	<td><select name='call_status' class="input-small">
-	<option value="">Choose</option>
-	<option value='0' selected>active</option>
-	<option value='1'>closed</option>
-	<option value='3'>deleted</option>
+	<option value="">Elegir</option>
+	<option value='0' selected>activo</option>
+	<option value='1'>cerrado</option>
+	<option value='3'>eliminado</option>
 	</select>
 	</td></tr>
 	<tr>
-	<td>From Date</td>
+	<td>Fecha inicio</td>
 	<td><input type="text" name="call_date1" id="datepicker" class="input-small"></td>
 	</tr>		
 	
 	<tr>
-	<td>To Date</td>
+	<td>fecha final</td>
 	<td><input type="text" name="call_date2" id="datepicker2" class="input-small"></td></tr>		
 	
-	<tr><td>Name</td>
+	<tr><td>Nombre</td>
 	<td><input type="text" name="call_first_name" class="input-xlarge"></td></tr>
 	
 	<tr><td>Email</td>
 	<td><input type="text" name="call_email" class="input-xlarge"></td></tr>
 	
-	<tr><td>Phone</td>
+	<tr><td>telefono</td>
 	<td><input type="text" name="call_phone" class="input-medium"></td></tr>
 
-	<tr><td>Dept</td><td><select name='call_department'>
-	<option value="">Choose</option>
+	<tr><td>Departamento</td><td><select name='call_department'>
+	<option value="">elegir</option>
 	<?php $call_dept = $db->get_results("select type_id,type_name from site_types where type=1 order by type_name;");
 foreach ($call_dept as $dept )
 {?>
@@ -148,7 +148,7 @@ foreach ($call_dept as $dept )
 <?php } ?>
 	</select></td></tr>
 
-	<tr><td>Request</td><td><select name='call_request'>
+	<tr><td>Tipo de solicitud</td><td><select name='call_request'>
 	<option value="">Choose</option>
 	<?php $request_name = $db->get_results("select type_id,type_name from site_types where type=2 order by type_name;");
 foreach ($request_name as $request )

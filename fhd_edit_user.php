@@ -8,7 +8,7 @@ include("includes/checksessionadmin.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Edit User Details</title>
+	<title>Editar Usuario</title>
 <?php 
 include("fhd_config.php");
 include("includes/header.php");
@@ -81,17 +81,17 @@ if (isset($_REQUEST['url_user_id'])){
 $nacl = md5(AUTH_KEY.$db->get_var("select last_login from site_users where user_id = $user_id;"));
 echo $actionstatus;?>
 
-<p><a href="fhd_users.php">Users</a></p>
+<p><a href="fhd_users.php">Usuarios</a></p>
 
 <form action="fhd_edit_user.php" method="post" class="form-horizontal">
 <table class="<?php echo $table_style_2;?>" style='width: auto;'>
-	<tr><td>User Login </td>
+	<tr><td>Nombre de usuario </td>
 	<td><input type="text" name="user_login" value="<?php echo $site_users->user_login;?>"</td></td></tr>
 	
-	<tr><td>Password</td>
+	<tr><td>Clave</td>
 	<td><input type="text" name="user_password"></td></tr>
 
-	<tr><td>User Level</td>
+	<tr><td>Nivel de usuario</td>
 	<td><select name="user_level">
 	<option selected value="<?php echo $site_users->user_level;?>"><?php echo show_user_level($site_users->user_level);?></option>
 	<option value="1"><?php echo show_user_level(1);?></option>
@@ -99,42 +99,34 @@ echo $actionstatus;?>
 	<option value="0"><?php echo show_user_level(0);?></option>
 	</select></td></tr>
 	
-	<tr><td>Name</td>
+	<tr><td>Nombre</td>
 	<td><input type="text" name="user_name" value="<?php echo $site_users->user_name;?>"></td></tr>
 	
 	<tr><td>Email</td>
 	<td><input type="text" name="user_email" value="<?php echo $site_users->user_email;?>" size="25"></td></tr>
 	
-	<tr><td>Phone</td>
+	<tr><td>Telefono</td>
 	<td><input type="text" name="user_phone" value="<?php echo $site_users->user_phone;?>" size="20"></td></tr>
 
-	<tr><td>Address</td>
+	<tr><td>dirección</td>
 	<td><input type="text" name="user_address" value="<?php echo $site_users->user_address;?>" size="20"></td></tr>
 
-	<tr><td>City</td>
+	<tr><td>Ciudad</td>
 	<td><input type="text" name="user_city" value="<?php echo $site_users->user_city;?>" size="20"></td></tr>
 
-	<tr><td>State</td>
-	<td><input type="text" name="user_state" value="<?php echo $site_users->user_state;?>" size="20"></td></tr>
-
-	<tr><td>Zip</td>
-	<td><input type="text" name="user_zip" value="<?php echo $site_users->user_zip;?>" size="20"></td></tr>
-
-	<tr><td>Country</td>
-	<td><input type="text" name="user_country" value="<?php echo $site_users->user_country;?>" size="20"></td></tr>
 
 	<tr><td>ID </td>
 	<td><?php echo $url_user_id;?></td></tr>
 
-	<tr><td colspan="2"><input type="checkbox" name="user_pending" value="1" <?php if($user_pending == 1){echo " CHECKED";}?>> User pending?</td></tr>
-	<tr><td colspan="2"><input type="checkbox" name="user_msg_send" value="1" <?php if($user_msg_send == 1){echo " CHECKED";}?>> Receive ticket status emails?</td></tr>
-	<tr><td colspan="2"><input type="checkbox" name="user_protect_edit" value="1" <?php if($user_protect_edit == 1){echo " CHECKED";}?>> Lock from user edit?</td></tr>
+	<tr><td colspan="2"><input type="checkbox" name="user_pending" value="1" <?php if($user_pending == 1){echo " CHECKED";}?>> usuario pendiente?</td></tr>
+	<tr><td colspan="2"><input type="checkbox" name="user_msg_send" value="1" <?php if($user_msg_send == 1){echo " CHECKED";}?>> Recibe mensajes de Emails de estado de las consultas?</td></tr>
+	<tr><td colspan="2"><input type="checkbox" name="user_protect_edit" value="1" <?php if($user_protect_edit == 1){echo " CHECKED";}?>> Bloqueo de edición de usuario ?</td></tr>
 
 </table>
 <input type='hidden' name='url_user_id' value='<?php echo $url_user_id;?>'>
 <input type='hidden' name='nacl' value='<?php echo $nacl;?>'>
 <input type='hidden' name='update' value='1'>
-<input type="submit" value="update" class="btn btn-primary btn-large">
+<input type="submit" value="actualizar" class="btn btn-primary btn-large">
 </form>
 
 <?php

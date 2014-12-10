@@ -3,8 +3,8 @@ ob_start();
 include("fhd_config.php");
 
 if (ALLOW_ANY_ADD <> 'yes') {
-	header("Location: index.php?e=2");
-	exit;
+	header("Location: index.php?e=2");//
+	exit;//
 }
 
 ?>
@@ -12,7 +12,7 @@ if (ALLOW_ANY_ADD <> 'yes') {
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Open Ticket</title>
+	<title>Consultas Abiertas</title>
 <?php 
 include("includes/header.php");
 include("includes/functions.php");
@@ -31,7 +31,7 @@ if (isset($_POST['nacl'])){
 	$call_email = $db->escape($_POST['call_email']);
 
 	if( !filter_var($call_email, FILTER_VALIDATE_EMAIL) ) {
-		echo "<div class=\"alert alert-danger\" style=\"max-width: 350px;\">That email address appears to be invalid.</div>";
+		echo "<div class=\"alert alert-danger\" style=\"max-width: 350px;\">Direccion de Email invalido.</div>";
 		include("includes/footer.php");
 		exit;
 	}
@@ -53,7 +53,7 @@ if (isset($_POST['nacl'])){
 			$message = "
 		<html>
 		<head>
-		  <title>Ticket</title>
+		  <title>Consultas</title>
 		</head>
 		<body>
 		  <p>Ticket Request Received.</p>
@@ -80,24 +80,24 @@ if ( isset($_GET['added']) ){
 	}
 }
 ?>
-<p><a href="index.php" class="btn btn-default"><i class='fa fa-arrow-left'></i> <?php echo FHD_TITLE;?></a></p>
-<h4><i class='fa fa-tag'></i> Open Ticket</h4>
+<p><a href="index.php" class="btn btn-default"><i class='fa fa-arrow-left'></i> <?php echo 'Mesa de Ayuda';?></a></p>
+<h4><i class='fa fa-tag'></i>Consultas abiertas</h4>
 
 <form action="fhd_any_call_add.php" method="post" class="form-horizontal" data-parsley-validate>
 <table class="<?php echo $table_style_2;?>" style='width:75%;'>
-	<tr><td style="width: 150px;">Date and Time</td>
+	<tr><td style="width: 150px;">Fecha y Hora</td>
 	<td><?php echo date('Y-m-d g:i a',($fhddate + (FHD_TIMEADJUST * 3600)));?></td></tr>		
 	
-	<tr><td>Name</td>
+	<tr><td>Nombre</td>
 	<td><input type="text" name="call_first_name" id="call_first_name" value="" required></td></tr>
 	
 	<tr><td>Email</td>
 	<td><input type="email" name="call_email" id="call_email" value="" required></td></tr>
 	
-	<tr><td>Phone</td>
+	<tr><td>telefono</td>
 	<td><input type="text" name="call_phone" class="input-medium" value=""></td></tr>
 
-	<tr><td>Department</td><td><select name='call_department'>
+	<tr><td>Departmento</td><td><select name='call_department'>
 	<option></option>
 	<?php $call_dept = $db->get_results("select type_id,type_name from site_types where type=1 order by type_name;");
 foreach ($call_dept as $dept )
@@ -106,7 +106,7 @@ foreach ($call_dept as $dept )
 <?php } ?>
 	</select></td></tr>
 
-	<tr><td>Request</td><td><select name='call_request'>
+	<tr><td>Tipo de solicitud</td><td><select name='call_request'>
 	<option></option>
 	<?php $request_name = $db->get_results("select type_id,type_name from site_types where type=2 order by type_name;");
 foreach ($request_name as $request )
@@ -115,7 +115,7 @@ foreach ($request_name as $request )
 <?php } ?>
 	</select></td></tr>
 
-	<tr><td>Device</td><td><select name='call_device'>
+	<tr><td>Dispositivos</td><td><select name='call_device'>
 	<option></option>
 	<?php $device_name = $db->get_results("select type_id,type_name from site_types where type=3 order by type_name;");
 foreach ($device_name as $device )
@@ -124,10 +124,10 @@ foreach ($device_name as $device )
 <?php } ?>
 	</select></td></tr>
 
-	<tr><td valign="top">Details</td><td><textarea rows="5" name="call_details" id="call_details" style="width: 100%" required></textarea></td></tr>
+	<tr><td valign="top">Detalles</td><td><textarea rows="5" name="call_details" id="call_details" style="width: 100%" required></textarea></td></tr>
 </table>
 <input type='hidden' name='nacl' value='any'>
-<input type="submit" value="Open Ticket" class="btn btn-primary btn-large btn-success">
+<input type="submit" value="Consultas abiertas" class="btn btn-primary btn-large btn-success">
 </form>
 <!-- validation -->
 <script type="text/javascript" src="js/livevalidation_standalone.compressed.js"></script>

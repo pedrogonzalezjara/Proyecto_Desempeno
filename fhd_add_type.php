@@ -7,7 +7,7 @@ include("includes/checksessionadmin.php");
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Add</title>
+	<title>Añadir</title>
 <?php
 include("fhd_config.php");
 include("includes/header.php");
@@ -30,7 +30,7 @@ if (isset($_POST['nacl'])){
 	header("Location: fhd_settings_action.php?type=$type");
  }else{
 	//not verified, warning and exit!
-	echo "<p class='save'>Warning: Verification Error!</p>";
+	echo "<p class='save'>Alerta: !Error de verificacion!</p>";
  	exit;
 }
 }
@@ -54,10 +54,10 @@ if ($type <> 0) { ?>
 	</table>
 <?php  }
 if ($type == 0) { ?>
-	<tr><td>Name</td><td><input type='text' name='type_name'></td></tr>
+	<tr><td>Nombre</td><td><input type='text' name='type_name'></td></tr>
 	<tr><td>Email</td><td><input type='text' name='type_email'></td></tr>
-	<tr><td>Location</td><td><input type='text' name='type_location'></td></tr>
-	<tr><td>Phone</td><td><input type='text' name='type_phone'></td></tr>
+	<tr><td>Lugar</td><td><input type='text' name='type_location'></td></tr>
+	<tr><td>Telefono</td><td><input type='text' name='type_phone'></td></tr>
 	<tr><td colspan='2'><input type='submit' value='add' class='btn btn-primary'></td></tr>
 	</table>
 <?php }?>
@@ -68,6 +68,6 @@ if ($type == 0) { ?>
 <?php
 if(isset($_SESSION['name'])){
 	
-	echo "<br /><p><strong>Login Name:</strong> " . $_SESSION['name'] . "</p>";
+	echo "<br /><p><strong>Nombre de Usuario:</strong> " . $_SESSION['name'] . "</p>";
 }
 include("includes/footer.php");

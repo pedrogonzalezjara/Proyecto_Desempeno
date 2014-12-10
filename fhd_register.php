@@ -13,7 +13,7 @@ $_SESSION['captcha'] = simple_php_captcha();
 include("includes/ajax.php");
 include("fhd_config.php");
 include("includes/header.php");
-if (ALLOW_REGISTER <> "no"){
+if (ALLOW_REGISTER <> "yes"){
 	echo "<div class=\"alert alert-info\" style=\"width: 175px;\">Registration is Closed</div>";
 	include("includes/footer.php");
 	exit;

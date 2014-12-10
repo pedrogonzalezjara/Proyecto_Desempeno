@@ -6,14 +6,14 @@ include("includes/checksession.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Help Desk</title>
+	<title>Mesa de Ayuda</title>
 <?php
 include("fhd_config.php");
 include("includes/header.php");
 include("includes/all-nav.php");
 ?>
 
-<h3><i class="fa fa-tachometer fa-lg"></i> Help Desk Dashboard</h3>
+<h3><i class="fa fa-tachometer fa-lg"></i>Plataforma de Mesa de Ayuda</h3>
 <hr>
 <?php
 include("includes/ez_sql_core.php");
@@ -38,13 +38,13 @@ $button_style = ' class="btn btn-default btn-lg" style="width: 250px;"';
 
 <p><i class="fa fa-user fa-sm fa-border"></i> <?php echo $user_name;?></p>
 
-<p><a href="fhd_calls.php"<?php echo $button_style;?>><i class="fa fa-folder-open-o pull-left"></i> Open Tickets: <?php echo $opentickets; ?></a></p>
-<p><a href="fhd_search.php?call_status=&search=1&recent=1"<?php echo $button_style;?>><i class="fa fa-folder-o pull-left"></i> Total Tickets: <?php echo $db->get_var("select count(call_id) from site_calls where call_status < 2  $queryadd;")?></a></p>
+<p><a href="fhd_calls.php"<?php echo $button_style;?>><i class="fa fa-folder-open-o pull-left"></i> Consultas abiertas: <?php echo $opentickets; ?></a></p>
+<p><a href="fhd_search.php?call_status=&search=1&recent=1"<?php echo $button_style;?>><i class="fa fa-folder-o pull-left"></i> Total de consultas: <?php echo $db->get_var("select count(call_id) from site_calls where call_status < 2  $queryadd;")?></a></p>
 
 <?php if(isset($_SESSION['admin'])){ ?>
-<p><a href="fhd_users.php?pending=1"<?php echo $button_style;?>><i class="fa fa-users pull-left"></i> Pending Users: <?php echo $db->get_var("select count(user_id) from site_users where user_pending = 1;")?></a></p>
-<p><a href="fhd_users.php"<?php echo $button_style;?>><i class="fa fa-users pull-left"></i> Users: <?php echo $db->get_var("select count(user_id) from site_users;")?></a></p>
-<p <?php echo $button_style;?>><i class="fa fa-square-o pull-left"></i> Notes: <?php echo $db->get_var("select count(note_id) from site_notes;")?></p>
+<p><a href="fhd_users.php?pending=1"<?php echo $button_style;?>><i class="fa fa-users pull-left"></i> Usuarios pendientes: <?php echo $db->get_var("select count(user_id) from site_users where user_pending = 1;")?></a></p>
+<p><a href="fhd_users.php"<?php echo $button_style;?>><i class="fa fa-users pull-left"></i> Usuarios: <?php echo $db->get_var("select count(user_id) from site_users;")?></a></p>
+<p <?php echo $button_style;?>><i class="fa fa-square-o pull-left"></i> Notas: <?php echo $db->get_var("select count(note_id) from site_notes;")?></p>
 <?php } 
 
 include("includes/footer.php");

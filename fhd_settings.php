@@ -8,7 +8,7 @@ include("includes/checksessionadmin.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Help Desk Settings</title>
+	<title>Configuración Mesa de Ayuda</title>
 <?php
 include("fhd_config.php");
 include("includes/header.php");
@@ -26,7 +26,7 @@ $date = date_create();
 $fhddate = date_format($date, 'U')
 ?>
 
-<h4>Help Desk Settings</h4>
+<h4>Configuración Mesa de Ayuda</h4>
 
 <a href="fhd_settings_action.php?type=1" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Departments</a> 
 <a href="fhd_settings_action.php?type=2" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Request Types</a> 
@@ -34,11 +34,11 @@ $fhddate = date_format($date, 'U')
 <a href="fhd_users.php?support_staff=show" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Support Staff</a>
 
 <hr>
-<h4>Config Settings <small>from: fhd_config.php</small></h4>
+<h4>Configuración Mesa de Ayuda <small>from: fhd_config.php</small></h4>
 
 <table class="<?php echo $table_style_1;?>" style='width: auto;'>
 <tr>
-	<td>Login tries before session lockout</td>
+	<td>Intentos antes de bloqueaer el acceso</td>
 	<td><span class="label label-info"><?php echo LOGIN_TRIES;?></span></td>
 </tr> 
 
@@ -67,46 +67,46 @@ if ( !is_writable( dirname ( $upload_path ) ) ) {
 <?php } ?>
 
 <tr>
-	<td>Allow registration</td>
+	<td>habilitar el registro</td>
 	<td><?php echo yesno(ALLOW_REGISTER);?></td>
 </tr> 
 <tr>
-	<td>Registration captcha</td>
+	<td>Utilizar captcha</td>
 	<td><?php echo yesno(CAPTCHA_REGISTER);?></td>
 </tr> 
 <tr>
-	<td>Reset Password captcha</td>
+	<td>utilizar captcha para restaurar clave</td>
 	<td><?php echo yesno(CAPTCHA_RESET_PASSWORD);?></td>
 </tr> 
 <tr>
-	<td>Allow unregistered users to open tickets</td>
+	<td>permitir a los no registrados para hacer consultas</td>
 	<td><?php echo yesno(ALLOW_ANY_ADD);?></td>
 </tr> 
 <tr>
-	<td>Time adjust</td>
+	<td>Ajustar hora</td>
 	<td><span class="label label-info"><?php echo FHD_TIMEADJUST;?></span>
 	<?php echo date('Y-m-d g:i a');?> <i class="fa fa-arrow-circle-right"></i> <?php echo date('Y-m-d g:i a',($fhddate + (FHD_TIMEADJUST * 3600)));?>
 	</td>
 </tr> 
 <tr>
-	<td>Encrypted passwords</td>
+	<td>Encriptar clave</td>
 	<td><?php echo yesno($encrypted_passwords);?> <?php echo $encrypted_link;?></td>
 </tr> 
 <tr>
-	<td>Notification email</td>
+	<td>Email de notificación</td>
 	<td><?php echo TO_EMAIL;?></td>
 </tr> 
 <tr>
-	<td>From email</td>
+	<td>Email de</td>
 	<td><?php echo FROM_EMAIL;?></td>
 </tr> 
 <tr>
-	<td>Database name</td>
+	<td>Nombre de base de dato</td>
 	<td><?php echo db_name;?></td>
 </tr> 
 
 <tr>
-	<td>CSS theme <a href="http://bootswatch.com/" target="_blank" class="btn btn-default btn-xs">view demo's</a></td>
+	<td>CSS <a href="http://bootswatch.com/" target="_blank" class="btn btn-default btn-xs">view demo's</a></td>
 	<td><?php echo css;?></td>
 </tr> 
 

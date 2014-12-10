@@ -38,13 +38,13 @@ if ($num > 0){
 <table class="<?php echo $table_style_2;?>" style='width: auto;'>
 <tr>
 	<th>ID</th>
-	<th>Open</th>
-	<th>Name</th>
+	<th>Abierto</th>
+	<th>Nombre</th>
 	<th>Email</th>
-	<th>Level</th>
-	<th>Email Ticket Updates</th>
-	<th>Pending</th>
-	<th>Edit Locked</th>
+	<th>Nivel</th>
+	<th>Email Actualización de consulta</th>
+	<th>Pendiente</th>
+	<th>Editar bloqueado</th>
 </tr>
 <?php
 foreach ( $site_calls as $call )
