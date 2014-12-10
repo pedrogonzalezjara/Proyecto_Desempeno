@@ -10,7 +10,7 @@ function simple_php_captcha($config = array()) {
 	
 	// Check for GD library
 	if( !function_exists('gd_info') ) {
-		throw new Exception('Required GD library is missing');
+		throw new Exception('Se necesita librerias de captcha');
 	}
 	
 	$bg_path = dirname(__FILE__) . '/backgrounds/';

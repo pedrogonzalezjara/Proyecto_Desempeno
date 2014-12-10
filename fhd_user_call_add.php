@@ -7,7 +7,7 @@ include("includes/checksession.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Ticket Details</title>
+	<title>Detalle de consulta</title>
 <?php 
 include("fhd_config.php");
 include("includes/header.php");
@@ -62,13 +62,13 @@ if (isset($_POST['nacl'])){
 			$message = "
 		<html>
 		<head>
-		  <title>Ticket</title>
+		  <title>Consulta</title>
 		</head>
 		<body>
-		  <p>Ticket Request Received.</p>
-		  <p>Ticket Number: $insert_id</p>
-		  <p>Name: $call_first_name</p>
-		  <p>Ticket Details: $call_details</p>
+		  <p>Consulta recibida.</p>
+		  <p>numero de consulta: $insert_id</p>
+		  <p>Nombre: $call_first_name</p>
+		  <p>Detalles de consulta: $call_details</p>
 			";
 			//if user has config set, then send them an email
 			if ($db->get_var("select user_msg_send from site_users where user_id = $user_id;") == 1){
@@ -90,7 +90,7 @@ $myquery = "SELECT user_name,user_phone,user_email from site_users WHERE (user_i
 $user_info = $db->get_row($myquery);
 ?>
 
-<h4><i class='fa fa-tag'></i> Open Ticket</h4>
+<h4><i class='fa fa-tag'></i>Solicitud</h4>
 <?php echo $actionstatus;?>
 
 <form action="fhd_user_call_add.php" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -98,16 +98,16 @@ $user_info = $db->get_row($myquery);
 	<tr><td style="width: 150px;">Date and Time</td>
 	<td><?php echo date('n/j/y g:i a');?></td></tr>		
 	
-	<tr><td>Name</td>
+	<tr><td>Nombre</td>
 	<td><input type="text" name="call_first_name" id="call_first_name" value="<?php echo $user_info->user_name;?>" required></td></tr>
 	
 	<tr><td>Email</td>
 	<td><input type="text" name="call_email" id="call_email" value="<?php echo $user_info->user_email;?>" required></td></tr>
 	
-	<tr><td>Phone</td>
+	<tr><td>Telefono</td>
 	<td><input type="text" name="call_phone" class="input-medium" value="<?php echo $user_info->user_phone;?>"></td></tr>
 
-	<tr><td>Department</td><td><select name='call_department'>
+	<tr><td>Departmento</td><td><select name='call_department'>
 	<option></option>
 	<?php $call_dept = $db->get_results("select type_id,type_name from site_types where type=1 order by type_name;");
 foreach ($call_dept as $dept )
@@ -116,7 +116,7 @@ foreach ($call_dept as $dept )
 <?php } ?>
 	</select></td></tr>
 
-	<tr><td>Request</td><td><select name='call_request'>
+	<tr><td>Solicitud</td><td><select name='call_request'>
 	<option></option>
 	<?php $request_name = $db->get_results("select type_id,type_name from site_types where type=2 order by type_name;");
 foreach ($request_name as $request )
@@ -125,7 +125,7 @@ foreach ($request_name as $request )
 <?php } ?>
 	</select></td></tr>
 
-	<tr><td>Device</td><td><select name='call_device'>
+	<tr><td>Dispositivo</td><td><select name='call_device'>
 	<option></option>
 	<?php $device_name = $db->get_results("select type_id,type_name from site_types where type=3 order by type_name;");
 foreach ($device_name as $device )
@@ -134,7 +134,7 @@ foreach ($device_name as $device )
 <?php } ?>
 	</select></td></tr>
 
-	<tr><td valign="top">Details</td><td><textarea rows="5" name="call_details" id="call_details" style="width: 100%" required></textarea></td></tr>
+	<tr><td valign="top">Detalles</td><td><textarea rows="5" name="call_details" id="call_details" style="width: 100%" required></textarea></td></tr>
 </table>
 
 <?php if (FHD_UPLOAD_ALLOW == "yes") {?>
@@ -142,7 +142,7 @@ foreach ($device_name as $device )
 <?php } ?>
 
 <input type='hidden' name='nacl' value='<?php echo $nacl;?>'>
-<input type="submit" value="Open Ticket" class="btn btn-primary btn-large btn-success">
+<input type="submit" value="Solicitud" class="btn btn-primary btn-large btn-success">
 </form>
 <!-- validation -->
 <script type="text/javascript" src="js/livevalidation_standalone.compressed.js"></script>

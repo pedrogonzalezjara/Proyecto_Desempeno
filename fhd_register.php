@@ -14,9 +14,6 @@ include("includes/ajax.php");
 include("fhd_config.php");
 include("includes/header.php");
 
-if (ALLOW_REGISTER <> "yes"){
-	echo "<div class=\"alert alert-info\" style=\"width: 175px;\">El registro esta cerrado</div>";
-}
 if (ALLOW_REGISTER <> "no"){
 	echo "<div class=\"alert alert-info\" style=\"width: 175px;\">Registration is Closed</div>";
 
@@ -24,7 +21,7 @@ if (ALLOW_REGISTER <> "no"){
 	exit;
 	}
 ?>
-<h1><?php echo FHD_TITLE; ?> registrarse</h1>
+<h1> registrarse</h1>
 <table class="<?php echo $table_style_2;?>" style='width: auto;'>
 <form action="fhd_register_action.php" method="post" class="form-horizontal">
 <tr>
@@ -37,11 +34,11 @@ if (ALLOW_REGISTER <> "no"){
 </tr>
 <tr>
 	<td>email:</td>
-	<td><input type="text" id="email" name="email" placeholder="name@example.com"></td>
+	<td><input type="text" id="email" name="email" placeholder="nombre@ejemplo.com"></td>
 </tr>
 <tr>
 	<td>Clave:</td>
-	<td><input type="password" id="password" name="password" placeholder="at least 5 characters"></td>
+	<td><input type="password" id="password" name="password" placeholder="minimo 5 caracteres"></td>
 </tr>
 <?php
 if (CAPTCHA_REGISTER == "yes"){

@@ -7,7 +7,7 @@ include("includes/checksessionadmin.php");
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Settings</title>
+	<title>Configuracion</title>
 <?php
 include("fhd_config.php");
 include("includes/header.php");
@@ -35,7 +35,7 @@ if (isset($_GET['nacl'])){
 //check type variable
 $type = checkid( $_GET['type'] );
 ?>
-<p><a href="fhd_settings.php">Settings</a></p>
+<p><a href="fhd_settings.php">configuracion</a></p>
 
 <h4><?php show_type_name($type);?></h4>
 <h5><i class="fa fa-plus"></i> <a href="fhd_add_type.php?type=<?php echo $type;?>">Add New</a></h5>
@@ -43,7 +43,7 @@ $type = checkid( $_GET['type'] );
 $num = $db->get_var("select count(type_name) from site_types where type = $type;");
 
 if ($num == 0) {
-	echo "<p>Invalid Type (error 2)</p>";
+	echo "<p>Tipo invalido (error 2)</p>";
 	include("includes/footer.php");
 	exit;
 }
@@ -52,16 +52,16 @@ if ($num == 0) {
 <?php if ($num > 0) { ?>
 <table class="<?php echo $table_style_2;?>" style='width: auto;'>
 <tr>
-	<th>Name</th>
+	<th>Nombre</th>
 <?php if ($type == 0) { ?>
 	<th>Email</th>
-	<th>Location</th>
-	<th>Phone</th>
+	<th>Lugar</th>
+	<th>telefono</th>
 <?php } ?>
-	<th>Edit</th>
-	<th>Delete</th>
+	<th>Editar</th>
+	<th>Eliminar</th>
 	<?php if ($type <> 0) { ?>
-	<th>Calls</th>
+	<th>LLamadas</th>
 	<?php } ?>
 </tr>
 <?php
@@ -79,7 +79,7 @@ $col_name = show_type_col($type);
 $count = $db->get_var("select count(call_id) from site_calls where $col_name = $type_id;");
 if ($count == 0){
 	//if there are no calls, then the category can be removed.
-	$deletelink = "<a href='fhd_settings_action.php?type_id=$type_id&type=$type&action=delete&nacl=$nacl' onclick=\"return confirm('Are you sure you want to delete?')\"><i class='glyphicon glyphicon-remove-circle' title='delete'></i></a>";
+	$deletelink = "<a href='fhd_settings_action.php?type_id=$type_id&type=$type&action=delete&nacl=$nacl' onclick=\"Confirmacion('Esta seguro de que desea eliminarlo?')\"><i class='glyphicon glyphicon-remove-circle' title='eliminar'></i></a>";
 }else{
 	$deletelink = "&nbsp;";
 }
@@ -104,6 +104,6 @@ $count = NULL;
 <?php
 if(isset($_SESSION['name'])){
 	
-	echo "<br /><p><strong>Login Name:</strong> " . $_SESSION['name'] . "</p>";
+	echo "<br /><p><strong>Nombre de Usuario:</strong> " . $_SESSION['name'] . "</p>";
 }
 include("includes/footer.php");

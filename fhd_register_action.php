@@ -13,26 +13,9 @@ include("includes/functions.php");
 //initilize db
 $db = new ezSQL_mysqli(db_user,db_password,db_name,db_host);
 
-
-if (ALLOW_REGISTER <> "yes"){
-	echo "<p>El registro esta cerrado</p>";
-	include("includes/footer.php");
-	exit;
-	}
 if (ALLOW_REGISTER <> "no"){
 	echo "<p>El registro esta cerrado</p>";
-
-
-if (ALLOW_REGISTER <> "yes"){
-echo "<p>El registro esta cerrado</p>";}
-
-if (ALLOW_REGISTER <> "no"){
-	echo "<p>El registro esta cerrado</p>";
-
-
-	include("includes/footer.php");
-	exit;
-	}
+}
 
 if (CAPTCHA_REGISTER == "yes"){
 $captchasession = $_SESSION['captcha']['code'];

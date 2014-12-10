@@ -28,10 +28,10 @@ $fhddate = date_format($date, 'U')
 
 <h4>Configuración Mesa de Ayuda</h4>
 
-<a href="fhd_settings_action.php?type=1" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Departments</a> 
-<a href="fhd_settings_action.php?type=2" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Request Types</a> 
-<a href="fhd_settings_action.php?type=3" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Device Type</a> 
-<a href="fhd_users.php?support_staff=show" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Support Staff</a>
+<a href="fhd_settings_action.php?type=1" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Departamentos</a> 
+<a href="fhd_settings_action.php?type=2" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Tipo de solicitud</a> 
+<a href="fhd_settings_action.php?type=3" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Tipo de dispositivo</a> 
+<a href="fhd_users.php?support_staff=show" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Staff de soporte</a>
 
 <hr>
 <h4>Configuración Mesa de Ayuda <small>from: fhd_config.php</small></h4>
@@ -106,7 +106,7 @@ if ( !is_writable( dirname ( $upload_path ) ) ) {
 </tr> 
 
 <tr>
-	<td>CSS <a href="http://bootswatch.com/" target="_blank" class="btn btn-default btn-xs">view demo's</a></td>
+	<td>CSS <a href="http://bootswatch.com/" target="_blank" class="btn btn-default btn-xs">Muestras</a></td>
 	<td><?php echo css;?></td>
 </tr> 
 
