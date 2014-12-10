@@ -62,7 +62,7 @@ if ($is_pending ==1) {
 
 if ($is_valid <> 1){
 	$_SESSION['hit'] += 1;
-	echo "<div class='alert alert-warning' style='width: 375px;'><i class='glyphicon glyphicon-info-sign'></i> Usuario incorrecto,o su registracion esta pendiente.</div>";
+	echo "<div class='alert alert-warning' style='width: 375px;'><i class='glyphicon glyphicon-info-sign'></i> Usuario incorrecto,o su registro esta pendiente.</div>";
 	include("includes/footer.php");
 	exit;
 }
